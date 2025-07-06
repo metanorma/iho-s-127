@@ -1,0 +1,31 @@
+
+[.preface]
+== Revision History
+
+Changes to this Product Specification are coordinated by the IHO Nautical
+Information Provision Working Group (NIPWG). New editions will be
+made available via the IHO web site. Maintenance of the Product Specification
+shall conform to IHO Technical Resolution 2/2007 (revised 2010).
+
+[cols="4",options="unnumbered"]
+|===
+h| Version Number h| Date h| Author h| Purpose
+
+| 0.1 | 2018-05-31 | | First draft
+| 0.2 | 2018-08-24 | RM
+| Address comments in the June 2018 round of NIPWG reviews; conform
+to draft S-100 Edition 4.0.0 (July 2018).
+| 1.0.0 RC1 | 2018-11-29 | RM
+| Address comments received during second round of NIPWG review; harmonize
+with October 2018 drafts of S-100 Ed. 4.0.0 and S-101 Ed. 1.0.0.
+| 1.0.1 | 2019-11-15 | RM | Clarifications and removal of unused elements.
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
+
+|===
