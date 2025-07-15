@@ -1,0 +1,1459 @@
+
+[[sec_5]]
+== Geo Features
+
+This clause describes abstract as well as non-abstract types. The
+abstract type *Feature Type* cannot be used directly, but defines
+attributes inherited by its sub-types. The encoding remarks in the
+description of *Feature Type* apply to its sub-types but may be overridden
+by remarks in the sub-type.
+
+[[sec_5.1]]
+=== Feature Type
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *FEATURE TYPE*. Generalized feature
+type which carries all the common attributes
+8+| *[underline]#S-87 Geo Feature:# Feature Type (Abstract)*
+8+| *[underline]#Primitives:# None*
+
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-87 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+h| [underline]#Information associations#
+
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+8+|
+
+[%unnumbered]
+image::figure-16.png[]
+
+[%unnumbered]
+image::figure-17.png[]
+
+[underline]#INT 1 Reference:#
+
+Where a complex attribute has all its sub-attributes optional
+(e.g., multiplicity 0..1 or 0..++*++), at least one of the sub-attributes
+must be populated.
+
+The *featureName* attribute in complex attribute *sourceIndication*
+is intended for the name of the source.
+
+The _AdditionalInformation_ association to a *Nautical Infomation*
+object can be used to attach an additional chunk of information to
+an information type, and there is no applicable specific information
+type or association. This should be used sparingly if at all.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_5.2]]
+=== Organisation Contact Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *ORGANISATION CONTACT AREA.* A feature
+often associated with contact information for an organization that
+exercises a management role or offers a service in the location.
+8+| *[underline]#S-127 Geo Feature:# Organisation Contact Area (Abstract)*
+
+*SuperType: Feature Type (Abstract)*
+8+| *[underline]#Primitives:# None*
+
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+3+| [No additional attributes] | 2+| | |
+
+8+| *[underline]#Information associations#*
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+8+|
+
+[%unnumbered]
+image::figure-18.png[]
+
+[%unnumbered]
+image::figure-19.png[]
+
+[underline]#INT 1 Reference:#
+
+++[no reference]++
+
+[underline]#Remarks:#
+
+* Adds the _SrvContact_ association to *Contact Details* for any sub
+feature class.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_5.3]]
+=== Supervised Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *SUPERVISED AREA.* A location which
+may be supervised by a responsible or controlling authority.
+8+| *[underline]#S-127 Geo Feature:# Supervised Area (Abstract)*
+
+*SuperType: Organisation Contact Area (Abstract)*
+8+| *[underline]#Primitives:# None*
+
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+3+| | 2+| | |
+
+8+| *[underline]#Information associations#*
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+8+|
+
+[%unnumbered]
+image::figure-20.png[]
+
+[%unnumbered]
+image::figure-21.png[]
+
+[underline]#INT 1 Reference:#
+
+++[no reference]++
+
+[underline]#Remarks:#
+
+* Adds the _SrvControl_ association to *Authority* for any sub feature
+class.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_5.4]]
+=== Reportable Service Area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *REPORTABLE SERVICE AREA.* A service
+area that generally has requirements for submission of information,
+including communications not strictly considered "reporting."
+8+| *[underline]#S-127 Geo Feature:# Reportable Service Area (Abstract)*
+
+*SuperType: Supervised Area (Abstract)*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+| S-127 Attribute | S-57 Acronym 2+| Allowable Encoding Value | Type | Multiplicity
+3+| | 2+| | |
+
+8+h| [underline]#Information associations#
+| Type | Association Name | Class | Role | Mult. | Class | Role | Mult.
+8+|
+
+[%unnumbered]
+image::figure-22.png[]
+
+[%unnumbered]
+image::figure-23.png[]
+
+[underline]#INT 1 Reference:#
+
+++[no reference]++
+
+[underline]#Remarks:#
+
+* Adds the _TrafficServRept_ association to *ShipReport* for any sub
+feature class.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_5.5]]
+=== Caution area
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *CAUTION AREA.* Generally, an area
+where the mariner has to be made aware of circumstances influencing
+the safety of navigation. (S-57 Edition 3.1, Appendix A -- Chapter
+1, Page 1.33, November 2000).
+8+| *[underline]#S-127 Geo Feature:# Caution area (CTNARE)*
+
+*SuperType: Feature Type (Abstract)*
+8+| *[underline]#Primitives:# Point, Surface*
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+h| [underline]#Information associations#
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+8+|
+
+[%unnumbered]
+image::figure-9.png[]
+
+[%unnumbered]
+image::figure-10.png[]
+
+[underline]#INT 1 Reference:#
+|===
+
+[[sec_5.2.1]]
+==== Caution areas (see S-4 -- B-242)
+
+If it is required to identify an area in which the mariner must be
+aware of circumstances influencing the safety of navigation (for example
+an area of continually changing depths), and which cannot be encoded
+using other feature types, it must be done using the feature
+*Caution Area*. This feature may be required to identify a danger,
+a risk, a rule or advice that is not directly related to a particular
+feature.
+
+[underline]#Remarks:#
+
+* To encode the relevant cautionary information, an instance of the
+information type *Nautical Information* (see <<sec_7.3>>) must be
+associated to the *Caution Area*.
+* If the information applies to a specific area the *Caution Area*
+feature should cover only that area.
+* If the information to be encoded is spatially linear, this should
+be encoded using a "very narrow" *Caution Area* feature of type area
+(approximately 0·2mm wide at the maximum display scale of the ENC
+data) similar to the method for encoding linear maritime jurisdiction
+areas (see S-101 DCEG clause 2.5.10).
+* Information which may be of use to the mariner, but is not significant
+to safe navigation and cannot be encoded using other feature types,
+should be encoded using a differentfeature type and an associated
+instance of the information type *Nautical Information* (see <<sec_7.3>>),
+complex attribute *information* (see <<sec_8.8>>). This encoding is
+intended to reduce the number of alarms or indications generated in
+the ECDIS due to the overuse of *Caution Area* features.
+* Notes should be kept to a minimum and be as concise as is compatible
+with accuracy and intelligibility. Hydrographic terminology (jargon)
+should be avoided, giving preference to easily understood words, for
+example "depths" rather than "bathymetry".
+* In order to ensure correct ECDIS display, *Caution Area* features
+of type surface should not share the geometry of features such as
+*Depth Contour* (S-101) and other features with higher ECDIS display
+priorities, as the *Caution Area* will appear to be "open ended",
+which may confuse the mariner. Where this occurs, the edge of the
+*Caution Area* should be extended outward to clear the "shared" edge,
+sufficient to avoid "duplicate geometry" validation errors (that is,
+at least 0.3 mm at the maximum display scale for the ENC data).
+
+[underline]#Distinction:# Collision regulations limit; depth discontinuity;
+information area; obstruction; underwater/awash rock; unsurveyed area;
+wreck.
+
+[[sec_5.6]]
+=== Radio Calling-In Point
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *RADIO CALLING-IN POINT*. A designated
+position at which vessels are required to report to a Traffic Control
+Centre. Also called reporting point or radio reporting point.
+(IHO Dictionary -- S-32).
+| *[underline]#S-127 Geo Feature:#* Radio calling-in point (RDOCAL)
+
+*SuperType: Feature Type (Abstract)*
+| *[underline]#Primitives:#* Point, Curve
+|
+[%unnumbered]
+image::figure-25.png[]
+
+[%unnumbered]
+image::figure-26.png[]
+
+| INT 1 Reference: M 40.1-2
+
+|===
+
+[[sec_5.6.1]]
+==== Radio calling-in (reporting) points (see S-4 -- B-488.1 and B-488.2)
+
+Radio reporting points, also called radio calling-in points, have
+been established in certain busy waterways and port approaches to
+assist traffic control. On passing these points or crossing a defined
+line, vessels are required to report on VHF to a Traffic Control Centre.
+
+If it is required to encode a radio reporting point or line, it must
+be done using the feature *Radio Calling-in Point*.
+
+[underline]#Remarks:#
+
+* Each *Radio Calling-In Point* feature of type point must carry at
+least one orientation. If it is required to encode the reciprocal
+orientation, to indicate that a bearing and its opposite apply to
+a *Radio Calling-In Point* feature, it must be done using attribute
+*trafficFlow* = _4_ (two-way). If the same position is used for another
+orientation (not opposite) of traffic flow, a second *orientationValue*
+attribute must be encoded.
+* The complex attribute *featureName*, sub-attribute *name* is used
+to encode the name and/or alphanumeric designator of the
+*Radio Calling-In Point*.
+* Regulations, restrictions, and recommendations are encoded using
+one or more instances of the information classes *Regulations*, *Restrictions*,
+or *Recommendations*. For example, if the requirement to report by
+radio relates to certain classes of vessels only.
+* An associated instance of the information class *Nautical Information*
+(see <<sec_7.3>>), complex attribute*information* isused to provide
+additional information, when *Regulations*, *Restrictions*, or *Recommendations*
+are not appropriate
+* *Radio Calling-In Point* features of type curve must be encoded
+such that resultant direction of the line (accounting for the direction
+of digitising and any subsequent reversal of the curve) is related
+such that the direction of traffic that is required to report is to
+the right. For curve features, it is not required to populate *orientation*.
+* If it is required to encode the area of a Vessel Traffic Service
+(VTS) containing radio reporting points or requiring periodic position
+reporting, this should be done using the feature
+*Vessel Traffic Service Area* (see <<sec_5.24>>).
+* Each VHF-channel should be indicated, using the attribute
+*communicationChannel* (see Appendix C-1).
+* If it is required to encode the cargo of a vessel required to report
+when passing the radio calling-in point, this must be done using the
+*categoryOfCargo* attribute.
+* If it is required to encode a specific type of vessel that is required
+to report when passing the radio calling-in point, this must be done
+using the *categoryOfVessel* attribute.
+
+[underline]#Distinction:# pilot boarding place; Vessel Traffic Service
+area.
+
+[[sec_5.7]]
+=== Warning signal stations
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *SIGNAL STATION, WARNING*. A warning
+signal station is a place on shore from whichwarning signals are made
+to ships at sea. (Adapted from IHO Dictionary -- S-32 and Defence
+Geospatial Information Working Group; Feature Data Dictionary Register,
+2012).
+| *[underline]#S-127 Geo Feature:# Signal station warning (SISTAW)*
+| *[underline]#Primitives:# Point, Surface*
+
+*SuperType: Feature Type (Abstract)*
+
+|
+[%unnumbered]
+image::figure-27.png[]
+
+[%unnumbered]
+image::figure-28.png[]
+
+| INT 1 Reference: T 20, 26, 28-36
+|===
+
+[[sec_5.7.1]]
+==== Warning signal stations (see S-4 -- B-494; B-496-7)
+
+Signal stations communicating visually have declined in importance.
+They are encoded for their main role of signalling information and
+instructions, and also as a form of landmark. The signals generally
+exhibit lights by day and night but may display shapes or flags by
+day.
+
+If it is required to encode a warning signal station, it must be done
+using the feature *Signal Station Warning*.
+
+[underline]#Remarks:#
+
+* The *Signal Station Warning* must only be used to describe the function
+of the signal station, independent of any building or structure that
+the *Signal Station Warning* is associated with.
+* Each VHF-channel should be indicated, using the attribute *communicationChannel* (see Appendix C-1).
+
+[underline]#Distinction:# Signal station, traffic.
+
+[[sec_5.8]]
+=== Signal Station Traffic
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *SIGNAL STATION, TRAFFIC*. A traffic
+signal station is a place on shore from which signals are made to
+regulate the movement of traffic. (Adapted from IHO Dictionary --
+S-32 and S-57 Edition 3.1, Appendix A -- Chapter 1, Page 1.155, November
+2000).
+| *[underline]#S-127 Geo Feature:# Signal station traffic (SISTAT)*
+
+*SuperType: Organisation Contact Area (Abstract)*
+| *[underline]#Primitives:# Point, Surface*
+|
+[%unnumbered]
+image::figure-29.png[]
+
+[%unnumbered]
+image::figure-30.png[]
+
+| INT 1 Reference: T 21-25.2
+
+|===
+
+[[sec_5.8.1]]
+==== Traffic signal stations (see S-4 -- B-494-5)
+
+Signal stations communicating visually have declined in importance.
+They are encoded on the largestmaximum display scale ENC data not
+only for their main role of signalling information and instructions
+but also as a form of landmark. The signals generally exhibit lights
+by day and night but may display shapes or flags by day.
+
+The nature of traffic signals varies from country to country and even
+from port to port. For charting purposes traffic signals can be considered
+to include, for instance:
+
+* Port entry and departure signals;
+* Lock, docking, and berthing signals;
+* Bridge signals;
+* International traffic signals.
+If it is required to encode a traffic signal station, it must be done
+using the feature *Signal Station Traffic*.
+
+[underline]#Remarks:#
+
+* *Signal Station Traffic* should not be used to encode a bridge light
+marking the centre of a navigable span.
+* The *Signal Station Traffic* must only be used to describe the function
+of the signal station, independent of any building or structure that
+the *Signal Station Traffic* is associated with.
+* Each VHF-channel should be indicated, using the attribute *communicationChannel* (see Appendix C-1).
+
+[underline]#Distinction:# Signal station, warning.
+
+[[sec_5.9]]
+=== Radar Range
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *RADAR RANGE*. Indicates the coverage
+of a sea area by a radar surveillance station. Inside this area a
+vessel may request shore-based radar assistance, particularly in poor
+visibility. (Adapted from Defence Geospatial Information Working Group;
+Feature Data Dictionary Register, 2010).
+| *[underline]#S-127 Geo Feature:# Radar range (RADRNG)*
+
+*SuperType: Feature type (Abstract)*
+
+| *[underline]#Primitives:# Surface*
+|
+
+[%unnumbered]
+image::figure-31.png[]
+
+[%unnumbered]
+image::figure-32.png[]
+
+| INT 1 Reference: M 31
+
+|===
+
+[[sec_5.9.1]]
+==== Radar ranges (see S-4 -- B-487.1)
+
+Many large ports have a radar surveillance system covering their approaches
+to provide guidance for vessels, particularly in poor visibility.
+The maximum range of the system forms an arc or series of overlapping
+arcs. If it is required to encode a radar range, it must be done using
+the feature *Radar Range*.
+
+[underline]#Remarks:#
+
+* Each VHF-channel should be indicated, using the attribute *communicationChannel* (see Appendix C-1).
+
+[underline]#Distinction:# Vessel Traffic Service area.
+
+[[sec_5.10]]
+=== Concentration of Shipping Hazard Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *Concentration of shipping hazard area*.
+An area where hazards, caused by concentrations of shipping, may occur.
+Hazards are risks to shipping, which stem from sources other than
+shoal water or obstructions.
+
+| *[underline]#S-127 Geo Feature:# Concentration of shipping hazard area (CONSHA)*
+
+*SuperType: Feature Type (Abstract)*
+| *[underline]#Primitives:# Surface*
+|
+[%unnumbered]
+image::figure-33.png[]
+
+[%unnumbered]
+image::figure-34.png[]
+
+| INT 1 Reference:
+
+In many waterways the amount of regular occurring ship traffic, fishing
+activities and similar frequent or in-frequent concentrations of vessels
+of various size can impose a hazard to safe navigation. If it is required
+to encode such an area of concentrations of shipping, it must be done
+using the feature *Concentration Of Shipping Hazard Area*.
+
+[underline]#Remarks:#
+
+* To encode the relevant regulations or notes, an instance of the
+information class *Regulations*, *Recommendations*, *Restrictions*,
+or *Nautical Information* (see <<sec_7.3>>) must be associated to
+the *Concentration of shipping hazard area*. The *Nautical Information*
+class should be used only if none of the other three are suitable.
+
+[underline]#Distinction:# Piracy Risk Area, Military Practice Area,
+Waterway Area
+
+|===
+
+[[sec_5.11]]
+=== Pilotage District
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *PILOTAGE DISTRICT*. An area within
+which a pilotage direction exists. Such directions are regulated by
+a competent harbour authority which dictates circumstances under which
+they apply. (UK Pilotage Act 1987).
+| *[underline]#S-127 Geo Feature:# Pilotage district*
+
+*SuperType: Feature type(Abstract)*
+| *[underline]#Primitives:# Surface*
+|
+[%unnumbered]
+image::figure-35.png[]
+
+[%unnumbered]
+image::figure-36.png[]
+
+|
+[underline]#INT 1 Reference:#
+|===
+
+[[sec_5.11.1]]
+==== Pilotage districts (see S-4 -- B-490)
+
+If it is required to encode the area within which regulations regarding
+pilotage apply it should be done using the feature *Pilotage District*.
+
+[underline]#Remarks:#
+
+* To encode the relevant regulations, an instance of the information
+class *Regulations*, *Recommendations*, *Restrictions*, or *Nautical*
+*Information* (see <<sec_7.3>>) must be associated to the
+*Pilotage District*. The *Nautical Information* class should be used
+only if none of the other three are suitable.
+* Where the limit of pilotage regulations are coincident with harbour
+or port limits it is not required to encode a *Pilotage District*
+feature.
+* The relationship between the pilotage district and any associated
+pilot boarding places should be encoded using the feature association
+_PilotageDistrictAssociation_(see <<sec_5.12>> and Appendix C-1).
+
+[underline]#Distinction:# Pilot boarding place, Pilot Service
+
+[[sec_5.12]]
+=== Pilot Boarding Place
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:#*PILOT BOARDING PLACE.* A location offshore
+where a pilot may board a vessel in preparation to piloting it through
+local waters. (Defence Geospatial Information Working Group; Feature
+Data Dictionary Register, 2010).
+| *[underline]#S-127 Geo Feature:# Pilot boarding place (PILBOP)*
+
+*SuperType: Organisation Contact Area (Abstract)*
+| *[underline]#Primitives:# Point, Surface*
+|
+
+[%unnumbered]
+image::figure-37.png[]
+
+[%unnumbered]
+image::figure-38.png[]
+
+|
+[underline]#INT 1 Reference:# T 1.1-4
+
+|===
+
+[[sec_5.12.1]]
+==== Pilot boarding places (see S-4 -- B-491.1-2)
+
+For a pilot boarding place, the pilot vessel may either cruise in
+the area or come out on request. Off some large ports pilots on outgoing
+ships may be disembarked at a different location. Pilots may board
+from a helicopter; it is then less important for a ship to reach the
+exact position of the boarding place but an approximate position should
+still be encoded. Some pilot stations are used solely for long-distance
+(deep-sea) pilots. Pilots may be in constant attendance, in regular
+attendance at certain limited times, or available by previous arrangement
+only. The primary purpose of encoded pilotage information is to show
+the position of the facility. Because of the many variations in the
+service provided, the main source of information on pilotage must
+be in an associated publication or product.
+
+If it is required to encode a pilot boarding place, it must be done
+using the feature *Pilot Boarding Place*.
+
+[underline]#Remarks:#
+
+* If it is required to encode the ship to shore or shore to ship contact
+information, it must be done using the information class
+*Contact Details* (see <<sec_7.8>>). The *Contact Details* must be
+associated to the *Pilot Boarding Place* feature using the association
+_AdditionalInformation_.
+* If it is required to encode the area in which pilotage regulations
+apply, it should be done using the feature *Pilotage District*
+(see <<sec_5.11>>). The relationship between the pilotage district
+and any associated pilot boarding places should be encoded using the
+feature association _PilotageDistrictAssociation_(see <<sec_5.11>>
+and Appendix C-1).
+* If a pilot boarding place has one or more communication channels
+designated for use in connection with pilotage activities at that
+particular boarding place, the channel(s) should be encoded using
+the *communicationChannel* attribute. Such a situation may arise if
+there are multiple boarding places in a pilotage district.
+
+[underline]#Distinction:# Pilotage district, Pilot Service
+
+[[sec_5.13]]
+=== Pilot Service
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:#  *PILOT SERVICE:* The service provided
+by a person who directs the movements of a vessel through pilot waters,
+usually a person who has demonstrated extensive knowledge of channels,
+aids to navigation, dangers to navigation, etc., in a particular area
+and is licensed for that area. (adapted from IHO Dictionary, S-32,
+5th Edition, 3843)
+| *[underline]#S-127 Geo Feature:#  Pilot service (PLTSRV)*
+
+*SuperType: Reportable Service Area (Abstract)*
+| *[underline]#Primitives:# Surface*
+|
+
+[%unnumbered]
+image::figure-39.png[]
+
+[%unnumbered]
+image::figure-40.png[]
+
+a| INT 1 Reference:
+|===
+
+[[sec_5.13.1]]
+==== Pilot service (see S-4 -- B-490)
+
+When it is required to encode individual pilot services within a pilot
+district, this must be done using the feature *Pilot Service*.
+
+[underline]#Remarks:#
+
+* If it is required to encode the ship to shore or shore to ship contact
+information, it must be done using the information class
+*Contact Details* (see <<sec_7.8>>). The *Contact Details* must be
+associated to the *Pilot Service* feature using the association _AdditionalInformation_.
+
+[underline]#Distinction:# List of features in the Product Specification
+distinct from the Feature.
+
+[[sec_5.14]]
+=== Routeing Measure
+
+[cols="a",options="unnumbered,noheader"]
+|===
+| *[underline]#IHO Definition:# ROUTEING MEASURE:* An area or line
+designating the limits or central line of a routeing measure
+(or part of a routeing measure). Routeing measures include traffic
+separation schemes, deep-water routes, two-way routes, archipelagic
+sea lanes, and fairway systems. (NIPWG).
+
+| *[underline]#S-127 Geo Feature:#* Routeing Measure
+
+*SuperType: Feature Type (Abstract)*
+
+| *[underline]#Primitives:# Curve, Surface*
+|
+[%unnumbered]
+image::figure-41.png[]
+
+[%unnumbered]
+image::figure-42.png[]
+
+|===
+
+[underline]#INT 1 Reference:#
+
+[[sec_5.14.1]]
+==== Routeing Measure (see S-4 -- B-432 - 436)
+
+The *Routeing Measure* feature is a simplification of the tracks and
+routes features in the ENC. A *Routeing Measure* feature is created
+by combining the spatial extents of the tracks and routes feature
+instances which together make up a specific track or route. The purpose
+of this feature in S-127 is to provide an indication of the existence
+of a route or track, as well as physical locations to which specific
+information can be associated in the form of information types.
+In S-127, each *Routeing Measure* feature has only a category attribute
+that indicates the type of track or route.
+
+The table below indicates which S-101 features can be combined to
+create *Routeing Measure* features of each category. Note that line
+features are used if not covered by an appropriate track/route feature,
+or if information must be associated to the line that cannot be associated
+to an area feature.
+
+A suggested guide for deciding whether component S-101 features should
+be combined is whether they are aggregated to the same (or related)
+aggregate track/route features. E.g., combine TSS Lane Part and TSS
+Roundabout features that are associated with the same
+*TrafficS eparation Scheme* feature in the ENC via a "Traffic Separation
+Scheme Aggregation" association. (*Traffic Separation Scheme* is an
+aggregate feature in S-101 that does not have its own geometry.)
+
+[cols=2,options="unnumbered"]
+|===
+h| Category of routeing measure h| S-101 features used
+
+.4+| recommended route | Navigation line
+| Recommended track
+| Recommended route centreline (only if not covered by an area track/route feature)
+| Recommended traffic lane part
+| fairway system | Fairways
+.3+| two-way route | Two-way route part
+| Two-way route
+| Recommended traffic lane part (when adjoining a two-way route)
+.4+| deep-water route | Deep water route centreline (only if not covered by an area track/route feature)
+| Deep water route part
+| Deep water route
+| Recommended traffic lane part (when adjoining a deep-water route)
+.8+| traffic separation scheme | Inshore traffic zone
+| Precautionary area
+| Traffic separation scheme lane part
+| Traffic separation zone
+| Traffic separation line (only if not covered by an area track/route feature)
+| Traffic separation scheme boundary (only if not covered by an area track/route feature)
+| Traffic separation scheme crossing
+| Traffic separation scheme roundabout
+.2+| archipelagic sea lane | Archipelagic sea lane area
+| Archipelagic sea lane axis (only if not covered by an area track/route feature)
+
+|===
+
+[underline]#Remarks:#
+
+* If different information must be associated to different parts of
+the track/route, create different *Routeing Measure* features.
+* If it is required to define the IMO status of a *Routeing Measure*
+with *categoryOfRouteingMeasure* set to 5: traffic separation, this
+must be done using the attribute *categoryOfTrafficSeparationScheme*.
+* If it is required to define a clearing line or a transit line
+(such as a measured distance) this must be done using the attribute
+*categoryOfNavigationLine*.
+
+[underline]#Distinction:#
+
+Radio calling in point, Radar range, Waterway area
+
+[[sec_5.15]]
+=== Waterway Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# WATERWAY AREA: A line of water
+(river, channel, etc.) which can be utilized for communication or
+transport (IHO Dictionary, S-32, 5th Edition, 5881)
+| *[underline]#S-127 Geo Feature:#* Waterway area (WATARE)
+
+*SuperType: Supervised Area (Abstract)*
+
+| *[underline]#Primitives:# Surface*
+|
+[%unnumbered]
+image::figure-43.png[]
+
+[%unnumbered]
+image::figure-44.png[]
+
+|===
+
+[[sec_5.15.1]]
+==== Waterway areas
+
+Waterways can be encoded to indicate how specific sections of water
+have been divided for various administrative purposes such as for
+organizing traffic and managing the available water column. When it
+is required to encode a section of water as a waterway, this must
+be done using the feature *Waterway Area*. A waterway area must declare
+how a vessel must used either a shore-based or other resource to obtain
+up-to-date information about the waterway, by using the attribute
+*dynamicResource*.
+
+[underline]#Remarks:#
+
+* When it is required to encode the siltation rate of a waterway,
+this must be done using the attribute *siltationRate*.
+
+[underline]#Distinction:# Underkeel Clearance Management Area, Underkeel
+Clearance Allowance Area, Routeing Measure
+
+[[sec_5.16]]
+=== ISPS Code Security Level
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *SECURITY LEVEL ACCORDING TO ISPS CODE:*
+The area to which an International Ship and Port Facility Security
+(ISPS) level applies.
+| *[underline]#S-127 Geo Feature:# Security level according to ISPS Code (SECLVL)*
+
+*SuperType: Organisation Contact Area(Abstract)*
+| *[underline]#Primitives:# Curve, Surface*
+|
+
+[%unnumbered]
+image::figure-45.png[]
+
+[%unnumbered]
+image::figure-46.png[]
+
+|===
+
+[[sec_5.16.1]]
+==== ISPS Code Security Level areas
+
+When it is required to encode the security level of an area, such
+as a port or area of a port, this must be done using the feature ISPS
+Code Security Level. The specific ISPS level is encoded in the attribute
+*ispsLevel*.
+
+[underline]#Remarks:#
+
+* When it is required to encode the ISPS Code Security Level but exact
+level is unknown, a null value can be given and any clarifying remarks
+added to an associated *Nautical Information*.
+* The International Ship and Port Facility Security (ISPS) Code is
+an amendment to the Safety of Life at Sea (SOLAS) Convention (1974/1988)
+on minimum security arrangements for ships, ports and government agencies.
+Having come into force in 2004, it prescribes responsibilities to
+governments, shipping companies, shipboard personnel, and port/facility
+personnel to "detect security threats and take preventative measures
+against security incidents affecting ships or port facilities used
+in international trade
+
+[underline]#Distinction:#
+
+Concentration Of Shipping Hazard Area; Restricted Area Regulatory;
+Restricted Area Navigational; Piracy Risk Area.
+
+[[sec_5.17]]
+=== Military Practice Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *MILITARY PRACTICE AREA*. An area within
+which naval, military or aerial exercises are carried out. Also called
+an exercise area. (Adapted from IHO Dictionary -- S-32).
+| *[underline]#S-127 Geo Feature:# Military practice area (MIPARE)*
+
+*SuperType: Supervised Area (Abstract)*
+
+| *[underline]#Primitives:# Point, Surface*
+
+|
+[%unnumbered]
+image::figure-47.png[]
+
+[%unnumbered]
+image::figure-48.png[]
+|===
+
+INT 1 Reference: N 30-33
+
+[[sec_5.17.1]]
+==== Military practice areas (see S-4 -- B-441.1-6)
+
+Military practice (or exercise) areas at sea are of various types
+and may be classified as follows with regard to their significance
+for the mariner:
+
+* Firing danger areas, sometimes called firing practice areas, i.e.
+permanent or temporary ranges, including bombing, torpedo, and missile
+ranges.
+* Mine-laying practice (and counter-measures) areas.
+* Submarine exercise areas.
+* Other exercise areas.
+
+Some degree of restriction on navigation and other rights may be implied
+by the encoding of military practice areas. There may be varying interpretations
+of the validity of the restrictions and possible infringement of the
+rights of innocent passage through territorial waters and elsewhere.
+Where it is thought desirable to depict such areas, even though clear
+range procedure may be observed, or the areas appear to be a derogation
+of the freedom of the seas, mariners should be informed (not necessarily
+on ENCs) that publication of the details of a law or regulation is
+solely for the safety and convenience of shipping and implies no recognition
+of the international validity of the law or regulation. By this means
+infringements are not condoned but the mariner receives a warning
+which may be necessary for their safety.
+
+If it is required to encode a military practice area, it must be done
+using the feature *Military Practice Area*.
+
+[underline]#Remarks:#
+
+* Submarine exercise areas should generally not be encoded where submarines
+exercise over wide areas which it would not be practicable to depict,
+and over which cautions (to keep a good look out for them) are unlikely
+to be effective. They may, however, be encoded where they occur in
+or near major shipping lanes or port approaches.
+* Firing danger areas at sea are frequently marked by IALA special
+buoys sometimes laid around the
+perimeter of the area and/or by specially erected lights, beacons,
+and targets. If required, all such features which could assist the
+navigator in identifying their position, or could be a hazard, must
+be encoded in the normal way.
+
+* The existence of mine-laying (and counter-measures/clearance) practice
+areas implies the possibility of unexploded mines or depth charges
+on the sea floor, and also the presence of harmless practice mines.
+
+[underline]#Distinction:# restricted area navigational; restricted
+area regulatory.
+
+[[sec_5.18]]
+=== Restricted Area Regulatory
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *RESTRICTED AREA*. A specified area
+on land or water designated by an appropriate authority within which
+access or navigation is restricted in accordance with certain specified
+conditions. (Adapted from IHO Dictionary -- S-32).
+
+A regulatory restricted area is an area where the restrictions have
+no direct impact on the navigation of a vessel in the area, but impact
+on the activities that can take place within the area.
+| *[underline]#S-127 Geo Feature:# Restricted area regulatory _(RESARE)_*
+
+*SuperType: Supervised Area (Abstract)*
+| *[underline]#Primitives:# Surface*
+
+|
+[%unnumbered]
+image::figure-49.png[]
+
+[%unnumbered]
+image::figure-50.png[]
+
+| INT 1 Reference: L 3; N 21-22, 25, 31, 34, 63
+|===
+
+[[sec_5.18.1]]
+==== Restricted areas in general (see S-4 -- B-422; B-437.1-7; B-439; B-439.2-4; B-441.1; B-445.9; B-445.11-12; B-446.4 and B-448.1)
+
+If it is required to encode a regulatory restricted area, it must
+be done using the feature *Restricted Area Regulatory*, or using other
+features having the attribute *restriction*
+(*Military Practice Area, Piracy Risk Area*).
+
+[underline]#Remarks:#
+
+* No remarks.
+
+[underline]#Distinction:# military practice area; restricted area
+navigational.
+
+[[sec_5.19]]
+=== Restricted Area Navigational
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *RESTRICTED AREA*. A specified area
+on land or water designated by an appropriate authority within which
+access or navigation is restricted in accordance with certain specified
+conditions. (Adapted from IHO Dictionary -- S-32).
+
+A navigational restricted area is an area where the restrictions have
+a direct impact on the navigation of a vessel in the area.
+
+| *[underline]#S-127 Geo Feature:# Restricted area navigational _(RESARE)_*
+
+*SuperType: Supervised Area (Abstract)*
+| *[underline]#Primitives:# Surface*
+
+|
+[%unnumbered]
+image::figure-51.jpg[]
+
+|
+[%unnumbered]
+image::figure-52.png[]
+
+|
+[underline]#INT 1 Reference:# L 3; N 21-22, 25, 31, 34, 63
+|===
+
+[[sec_5.19.1]]
+==== Restricted areas in general (see S-4 -- B-422; B-430.2; B-431.4; B-435.7; B-435.11; B-437.1-7; B-439; B-439.2-4; B-441,1; B-445.9; B-445.11-12; B-446.4 and B-448.1)
+
+If it is required to encode a regulatory restricted area, it must
+be done using the feature *Restricted Area Regulatory*, or using other
+features having the attribute *restriction*
+(*Military Practice Area, Piracy Risk Area*).
+
+[underline]#Remarks:#
+
+* *Restricted Area Navigational* must only be encoded if one of the
+allowable values for *restriction* applies for the area.
+* The term "no anchoring area" is used to identify the IMO routeing
+measure of that name. Such areas, where required, must be encoded
+as *Restricted Area Navigational* with attribute *restriction* = _1_
+(anchoring prohibited).
+
+[underline]#Distinction:# military practice area; restricted area navigational.
+
+[[sec_5.20]]
+=== Underkeel Clearance Allowance Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| *[underline]#IHO Definition:# UNDERKEEL CLEARANCE ALLOWANCE AREA:*
+An area for which an authority has stated underkeel allowance requirements.
+| *[underline]#S-127 Geo Feature:# Underkeel clearance allowance area (UKAARE)*
+
+*SuperType: Feature Type (Abstract)*
+
+| *[underline]#Primitives:# Point, Surface*
+|
+[%unnumbered]
+image::figure-53.png[]
+
+[%unnumbered]
+image::figure-54.png[]
+|===
+
+[[sec_5.20.1]]
+==== Underkeel clearance allowance areas
+
+If it is required to encode an area with underkeel allowance requirements,
+it must be done using the feature *Underkeel Clearance Allowance Area.*
+This feature class has the options to encode a fixed allowance value
+or a variable allowance value as a percentage of the either the draught
+or the beam of the vessel.
+
+[underline]#Remarks:#
+
+* If it is required to encode a fixed underkeel allowance, this must
+be done using the attribute *Underkeel allowance fixed*. The fixed
+underkeel allowance value must be encoded as metres, in a resolution
+of 0.1m
+* If it is required to encode a variable underkeel allowance as a
+factor of the ship's draught, this must be done using the attributes
+*Underkeel allowance variable draught based* and *operation*. The
+percentage of the draught is encoded in the
+*Underkeel allowance variable draught based*, and the *operation*
+attribute is used to indicate is it is the largest value of the draught
+that is used.
+* If it is required to encode a variable underkeel allowance as a
+factor of the ship's beam, this must be done using the attributes
+*Underkeel allowance variable beam based* and *operation*. The percentage
+of the beam is encoded in the *Underkeel allowance variable beam based*,
+and the *operation* attribute is used to indicate is it is the largest
+width of the beam that is used.
+* If it is required to encode a water level trend that is a condition
+of the underkeel allowance, this must be done using the attribute
+*water level trend*.
+* If there are different underkeel allowance conditions depending
+on the water level trend, several overlapping instances of
+*Underkeel Clearance Allowance Area* must be encoded to capture all
+conditions.
+
+[underline]#Distinction:#
+
+Underkeel Clearance Management Area, Waterway area
+
+[[sec_5.21]]
+=== Underkeel Clearance Management Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# UNDERKEEL CLEARANCE MANAGEMENT AREA:
+An area for which an authority permits use of dynamic underkeel clearance
+information or provides dynamic information related to underkeel clearances.
+(NIPWG).
+| *[underline]#S-127 Geo Feature:# Underkeel Clearance Management Area*
+
+*SuperType: Reportable Service Area (Abstract)*
+| *[underline]#Primitives:#* Allowable geometric primitive(s) *Surface*
+|
+
+[%unnumbered]
+image::figure-55.png[]
+
+[%unnumbered]
+image::figure-56.png[]
+
+|===
+
+[[sec_5.21.1]]
+==== Underkeel clearance management areas
+
+If it is required to encode an underkeel clearance management area
+where an appropriate authority has permitted the use of dynamic underkeel
+clearance information, it must be done using
+*Underkeel Clearance Management Area.* The attribute *dynamicResource*
+is used to indicate what kind of dynamic underkeel clearance information
+is provided. If the value of *dynamicResource* is either 2:mandatory
+external dynamic or 3:optional external dynamic, the external source
+must be encoded in an associated *Contact Details* instance.
+
+[underline]#Distinction:#
+
+Underkeel Clearance Allowance Area, Waterway area
+
+[[sec_5.22]]
+=== Piracy Risk Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *PIRACY AND ARMED ROBBERY RISK AREA:*
+An area where there is an increased risk of piracy or armed robbery.
+| *[underline]#S-127 Geo Feature:# Piracy Risk Area (PIRARE)*
+
+*SuperType: Reportable Service Area (Abstract)*
+| *[underline]#Primitives:# Surface*
+|
+[%unnumbered]
+image::figure-57.png[]
+
+[%unnumbered]
+image::figure-58.png[]
+|===
+
+[[sec_5.22.1]]
+==== Piracy risk areas (see UNCLOS Part V11)
+
+An area where there is a raised risk of piracy or armed robbery. Piracy
+consists of any of the following acts:
+
+. any illegal acts of violence or detention, or any act of depredation,
+committed for private ends by the crew or the passengers of a private
+ship or a private aircraft, and directed:
+.. on the high seas, against another ship or aircraft, or against
+persons or property on board such ship or air-craft;
+.. against a ship, aircraft, persons or property in a place outside
+the jurisdiction of any State;
+
+. any act of voluntary participation in the operation of a ship or
+of an aircraft with knowledge of facts making it a pirate ship or
+aircraft;
+. any act of inciting or of intentionally facilitating an act described
+in subparagraph (a) or (b).
+
+(United Nations Convention on the Law of the Sea -- Article 101)
+
+Armed robbery takes place within the jurisdiction of a State.
+
+Regular bulletins come from the IMB Piracy Reporting Centre --
+Kuala Lumpur.
+
+When it is required to encode an area with risk of piracy or armed
+robbery, it must be done using a *Piracy Risk Area.*
+
+[underline]#Remarks:#
+
+* If it required to encode any ship reporting requirements within
+the Piracy Risk Area, this must be done using an associated Ship Report
+information type.
+
+[underline]#Distinction:#
+
+ISPS Code Security Level.
+
+[[sec_5.23]]
+=== Place of Refuge
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *PLACE OF REFUGE:* A place where a
+ship in need of assistance can take action to enable it to stabilize
+its condition and reduce the hazards to navigation, and to protect
+human life and the environment. (NIPWG).
+| *[underline]#S-127 Geo Feature:# Place of refuge*
+
+*SuperType: Reportable Service Area (Abstract)*
+| *[underline]#Primitives:# Point, Surface*
+|
+[%unnumbered]
+image::figure-59.png[]
+
+|
+[%unnumbered]
+image::figure-60.png[]
+
+[%unnumbered]
+image::figure-61.png[]
+|===
+
+[[sec_5.23.1]]
+==== Place of refuge (see S-4 -- B-493.4)
+
+If it is required to encode a place refuge for a ship or mariners,
+it must be done using the feature class *Place of refuge*. If the
+place of refuge is equipped with communication equipment, the VHF
+communication channel can be described in the attribute *communicationChannel*.
+Communication information for authorities located at other places
+(or whose location is irrelevant or unknown) may be encoded in an
+associated *Contact Details* object.
+
+Where possible the full extent of the place of refuge area should
+be encoded using surface geometry. When it is not possible to define
+the area, point geometry can be placed in a central place of the area.
+
+Authorities may designate any other location (port, harbour, a sheltered
+place along the coastline, etc.) as a place of refuge for a specific
+occurrence without designating it as a permanent or general place
+of refuge. Such places should not normally be encoded as
+*Place Of Refuge* features without consulting the responsible authority.
+
+The relevant IMO circular and policies issued by maritime authorities
+on places of refuge make it abundantly clear that designated places
+are not the only possibilities for refuge, however, data producers
+may, as a precaution, include general information about places of
+refuge with their datasets. Such general information may be encoded
+as a note advising mariners that other places of refuge may be arranged
+for a particular incident with the consent of the appropriate authorities.
+Such a note might be encoded as a *Nautical Information* object associated
+to appropriate geographic features.
+
+[underline]#Distinction:#
+
+Nil
+
+[[sec_5.24]]
+=== Vessel Traffic Service Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *Vessel Traffic Service Area:*
+The area of any service implemented by a relevant authority primarily
+designed to improve safety and efficiency of traffic flow and the
+protection of the environment. It may range from simple information
+messages, to extensive organisation of the traffic involving national
+or regional schemes. (NIPWG).
+| *[underline]#S-127 Geo Feature:# Vessel Traffic Service Area*
+
+*SuperType: Reportable Service Area (Abstract)*
+
+| *[underline]#Primitives:# Surface*
+|
+[%unnumbered]
+image::figure-62.png[]
+
+[%unnumbered]
+image::figure-63.png[]
+
+|===
+
+[[sec_5.24.1]]
+==== Vessel Traffic Service Area (see S-4 -- B-488.3)
+
+A Vessel Traffic Service (VTS) is a service implemented by a competent
+authority to improve the safety and efficiency of vessel traffic operations
+and to protect the environment. A VTS provides, from one or more traffic
+control centres, a number of services which may include:
+
+* Traffic management for the safe and efficient movement of vessels
+within the area, usually including mandatory reporting;
+* Navigational assistance to support onboard decision making, usually
+on request (see also S-4 B-487.2 for radar reference lines);
+* Information for vessels operating in the area, for example: on arrival,
+berthing, anchoring, and departure from ports; about movements of
+other vessels; on navigational hazards; regarding weather. These may
+be regularly broadcast or be available on request.
+A VTS service area may range from supporting entry and departure to
+an individual port to a much larger regional VTS (possibly containing
+local VTS) that may provide services to vessels in the outer approaches
+to ports or transiting through the region. Consequently, there may
+be VTS within VTS and also overlapping VTS, making it difficult for
+the mariner to always be aware which VTS area is applicable. Therefore,
+wherever the information is available, limits of VTS areas should
+be charted, at least on the largest scale chart and on appropriate
+smaller scales where navigation is practicable and/or to assist passage
+planning.
+
+If it is required to encode a Vessel Traffic Service Area, it must
+be done using the feature class *Vessel Traffic Service Area*.
+The type of VTS is encoded in the *categoryOfVesselTrafficService*
+attribute. If it is required to associate related Radio Calling-In
+Points, Signal Stations (Warning or Traffic), or Radar Ranges this
+must be done using the association _TrafficControlServiceAggregation_.
+
+A ship reporting service may be operated by the VTS, and if it is
+required to encoding an associated ship reporting service, this must
+be done by encoding a *Ship Reporting Service Area* (see <<sec_5.25>>).
+
+[underline]#Remarks:#
+
+* If it is required to describe the procedures for accessing the VTS
+services, this must be done using the *serviceAccessProcedure* attribute.
+* The requirements for maintaining listening watch within the VTS
+area must be encoded in a summarized form using the
+*requirementsForMaintenanceOfListeningWatch* attribute. Any detailed
+elaborations should be encoded in the *textContent* attribute. As
+a text attribute, this can be populated with the text "not specified",
+"unknown", etc., if the requirements are unknown. If it is known that
+there are no listening watch requirements, the attribute must be encoded
+with "not applicable". (There may be a general requirement in the
+applicable national shipping regulations instead of or in addition
+to a specific requirement.)
+
+[underline]#Distinction:# Radio Calling-In Point; Signal Station Warning;
+Radar Range; Signal Station Traffic.
+
+[[sec_5.25]]
+=== Ship Reporting Service Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *Ship Reporting Service Area:* A service
+established by a relevant authority consisting of one or more reporting
+points or lines at which ships are required to report their identity,
+course, speed and other data to the monitoring authority (NIPWG).
+| *[underline]#S-127 Geo Feature:# Ship Reporting Service Area*
+
+*SuperType: Reportable Service Area (Abstract)*
+| *[underline]#Primitives:# Surface*
+|
+[%unnumbered]
+image::figure-64.png[]
+
+[%unnumbered]
+image::figure-65.png[]
+
+[%unnumbered]
+image::figure-66.png[]
+|===
+
+[[sec_5.25.1]]
+==== Ship Reporting Service Area
+
+IMO MSC 43(64) states that the objectives of a ship reporting system
+should be based upon: "the improvement of the safety of life at sea,
+the safety and efficiency of navigation and/or to increase the protection
+of the marine environment. They may or may not be operated as part
+of a vessel traffic service."As such, the Ship Reporting Service (SRS)
+contributes to the traffic situational awareness of a Coastal administration
+either by being informed of the ships heading into its waters or the
+ones already transiting it. Based on the information collected, a
+Coastal administration can initiate an intervention plan if required.
+An SRS is generally regional in scale and may provide services to
+vessels in the outer approaches to ports or transiting through the
+region. Therefore, wherever the information is available, limits of
+SRS areas should be charted, at least on the largest scale chart and
+on appropriate smaller scales where navigation is practicable and/or
+to assist passage planning. The service can range from providing information
+and guidelines on reporting formalities and when, what and how to
+report in a specific port to a full exchange of information in a Single
+Window ship reporting system. A reportable area may also be encoded
+as an Ship Reporting Service area.
+
+If it is required to encode a Ship Reporting Service, it must be done
+using the feature class *Ship Reporting Service Area*. If it is required
+to associate related Radio Calling-In Points or VTS this must be done
+using the association _TrafficControlServiceAggregation_.
+
+If it is required to encode a Ship Reporting Service that is operated
+by a VTS, this must be done by encoding coincident Ship Reporting
+Service and VTS areas.
+
+[underline]#Remarks:#
+
+* If it is required to describe the procedures for accessing the SRS
+services, this must be done using the *serviceAccessProcedure* attribute.
+* The requirements for maintaining listening watch within the VTS
+area must be encoded in a summarized form using the
+*requirementsForMaintenanceOfListeningWatch* attribute. Any detailed
+elaborations should be encoded in the *textContent* attribute.
+As a text attribute, this can be populated with the text "not specified",
+"unknown", etc., if the requirements are unknown. If it is known that
+there are no listening watch requirements, the attribute must be encoded
+with "not applicable".
+
+[underline]#Distinction:# Vessel Traffic Service; Radio Calling-In
+Point; Signal Station Warning; Radar Range; Signal Station Traffic.
+
+[[sec_5.26]]
+=== Local Port Service Area
+
+[cols=a,options="unnumbered,noheader"]
+|===
+| [underline]#IHO Definition:# *Local Port Service Area:* A service
+established to provide port information without interaction between
+the customer and the service provider. This information could be inter
+alia berthing information, availability of port services, shipping
+schedules, meteorological and hydrological data. (NIPWG).
+| *[underline]#S-127 Geo Feature:# Local Port Service Area*
+
+*SuperType: Reportable Service Area (Abstract)*
+| *[underline]#Primitives:# Surface*
+|
+[%unnumbered]
+image::figure-67.png[]
+
+[%unnumbered]
+image::figure-68.png[]
+
+|===
+
+[[sec_5.26.1]]
+==== Local Port Service Area
+
+The Local Port Service (LPS) aims facilitating the exchange of information
+and coordination among key stakeholders during each phase of a ship
+transit. To promote an optimal coordination and efficient operations
+all along the transportation chain, the exchange of information must
+be done in a timely manner. This allows all actors involved in LPS
+to take specific actions at the right moment either to respond or
+to adapt to new situations, such as delay, premature departure/arrival,
+incident, and so forth. A LPS cover an individual port and may provide
+services to vessels in the outer approaches to the port or that are
+transiting through the region. It may be difficult for the mariner
+to always be aware which LPS area is applicable. Therefore, wherever
+the information is available, limits of LPS areas should be charted,
+at least on the largest scale chart and on appropriate smaller scales
+where navigation is practicable and/or to assist passage planning.
+
+If it is required to encode a Local Port Service Area, it must be
+done using the feature class *Local Port Service Area*. If it is required
+to associate related Radio Calling-In Points, Signal Stations
+(Warning or Traffic), or Radar Ranges this must be done using the
+association _TrafficControlServiceAggregation_.
+
+[underline]#Remarks:#
+
+* If it is required to describe the procedures for accessing the port
+services, this must be done using the *serviceAccessProcedure* attribute.
+* The requirements for maintaining listening watch within the area
+must be encoded using the *requirementsForMaintenanceOfListeningWatch*
+attribute.
+
+As a text attribute, this can be populated with the text "not specified",
+"unknown", etc., if the requirements are unknown.
+
+[underline]#Distinction:# Vessel Traffic Service Area, Ship Reporting
+Service Area, Radio Calling-In Point; Signal Station Warning; Radar
+Range; Signal Station Traffic.

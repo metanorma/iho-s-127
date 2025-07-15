@@ -1,0 +1,544 @@
+
+[[sec_8]]
+== Complex attributes
+
+This DCEG describes complex attributes similarly to features and information
+types, specifying the name, definition, etc., then providing a picture
+depicting the sub-attributes and their types, then encoding remarks
+describing any constraints, etc., that apply to the complex attribute
+in general. Constraints and usage notes pertaining to their use in
+specific features or information types are provided in the respective
+table describing the feature or information type. Complex sub-attributes
+are not shown in the figures since they are depicted in their own
+sub-clauses elsewhere in this clause.
+
+[[sec_8.1]]
+=== Bearing information
+
+Name: Bearing information
+
+Definition: A bearing is the direction one object is from another
+object.
+
+Code: `'bearingInformation'`
+
+Remarks:
+
+Aliases: BRGINF
+
+[%unnumbered]
+image::figure-96.png[]
+
+[%unnumbered]
+image::figure-97.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.2]]
+=== Contact address
+
+Name: Contact address
+
+Definition: Direction or superscription of a letter, package, etc.,
+specifying the name of the place to which it is directed, and optionally
+a contact person or organisation who should receive it.
+
+Code: `'contactAddress'`
+
+Remarks:
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-98.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.3]]
+=== Feature name
+
+Name: Feature name
+
+Definition: The complex attribute provides the name of an entity,
+defines the national language of the name, and provides the option
+to display the name at various system display settings.
+
+Code: `'featureName'`
+
+Remarks:
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-99.png[]
+
+[[sec_8.4]]
+=== Fixed date range
+
+Name: Fixed date range
+
+Definition: The complex attribute describes single fixed period, as
+the date range between its sub-attributes.
+
+Code: `'fixedDateRange'`
+
+Remarks: the sub-attributes date start and date end must be encoded
+using 4 digits for the calendar year (YYYY) and, optionally, 2 digits
+for the month (MM) (e.g. April = 04) and 2 digits for the day (DD).
+When no specific month and/or day is required/known, the values are
+replaced with dashes (-).
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-101.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.5]]
+=== Frequency pair
+
+Name: Frequency pair
+
+Definition: A pair of frequencies for transmitting and receiving radio
+signals. The shore station transmits and receives on the frequencies
+indicated.
+
+Code: `'frequencyPair'`
+
+Remarks:
+
+Aliases: FRQPAR
+
+[%unnumbered]
+image::figure-102.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.6]]
+=== Graphic
+
+Name: Graphic
+
+Definition: Pictorial information such as a photograph, sketch, or
+other graphic, optionally accompanied by descriptive information about
+the graphic and the location relative to its subject from which it
+was made.
+
+Code: `'graphic'`
+
+Remarks:
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-103.png[]
+
+[[sec_8.7]]
+=== Horizontal position uncertainty
+
+Name: Horizontal position uncertainty
+
+Definition: The best estimate of the accuracy of a position.
+
+Code: `'horizontalPositionUncertainty'`
+
+Remarks: The expected input is the maximum of the two-dimensional
+error. The error is assumed to be positive and negative.
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-104.png[]
+
+S-127 does not use the uncertaintyVariableFactor attribute used in
+S-101 since there are no attributes in S-127 (e.g., distances, widths)
+to which a variable factor can be applied.
+
+[[sec_8.8]]
+=== Information
+
+Name: Information
+
+Definition: Textual information about the feature. The information
+may be provided as a string of text or as a file name of a single
+external text file that contains the text.
+
+Code: `'information'`
+
+Remarks: this complex attribute should be used, for example, to hold
+the information that is shown on paper charts by cautionary and explanatory
+notes.
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-105.png[]
+
+Remarks:
+
+* At least one of the sub-attributes fileReference or text must be
+populated.
+* If fileLocator is populated, fileReference must be populated.
+
+[[sec_8.9]]
+=== Notice time
+
+Name: Notice time
+
+Definition: Span of time, prior to the time the service is needed,
+for preparations to be made to fulfil the requirement.
+
+Code: `'noticeTime'`
+
+Remarks:
+
+Aliases: NTCTIM
+
+[%unnumbered]
+image::figure-106.png[]
+
+[%unnumbered]
+image::figure-107.png[]
+
+Remarks:
+
+* At least one of the sub-attributes noticeTimeHours and noticeTimeText
+must be encoded.
+* If there is more than one noticeTimeHours sub-attribute encoded,
+then the sub-attribute operation must be encoded.
+
+[[sec_8.10]]
+=== Online resource
+
+Name: Online resource
+
+Definition: Information about online sources from which a resource
+or data can be obtained.
+
+Code: `'onlineResource'`
+
+Remarks: The complex attribute describes the access to online resources
+according to ISO 19115.
+
+Aliases: ONLRES
+
+[%unnumbered]
+image::figure-108.png[]
+
+[[sec_8.11]]
+=== Orientation
+
+Name: Orientation
+
+Definition: The angular distance measured from true north to the major
+axis of the feature.
+
+Code: `'orientation'`
+
+Remarks:
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-109.png[]
+
+[[sec_8.12]]
+=== Periodic date range
+
+Name: Periodic date range
+
+Definition: The complex attribute describes the active period for
+a seasonal feature (e.g. a buoy), as the dates between its sub-attributes
+
+Code: `'periodicDateRange'`
+
+Remarks: The sub-attributes date start and date end should be encoded
+using 4 digits for the calendar year (YYYY), 2 digits for the month
+(MM) (for example April = 04) and 2 digits for the day (DD). When
+no specific year is required (that is, the feature is removed at the
+same time each year) the following two cases may be considered: -
+same day each year: pass-format:metanorma[----MMDD] - same month each
+year: pass-format:metanorma[----MM--] This
+conforms to ISO 8601:2004.
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-110.png[]
+
+[[sec_8.13]]
+=== Radiocommunications
+
+Name: Radiocommunications
+
+Definition: Detailed radiocommunications description with channels,
+frequencies, preferences and time schedules
+
+Code: `'radiocommunications'`
+
+Remarks:
+
+Aliases: RDOCOM
+
+[%unnumbered]
+image::figure-111.png[]
+
+[%unnumbered]
+image::figure-112.png[]
+
+[%unnumbered]
+image::figure-113.png[]
+
+[%unnumbered]
+image::figure-114.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.14]]
+=== RxN Code
+
+Name: RxN Code
+
+Definition: A summary of the impact of the most common types of regulation,
+restriction, recommendation and nautical information on a vessel.
+
+Code: `'rxnCode'`
+
+Remarks: This attribute converts the subject, topic, and effects of
+regulations, etc., from plain text or natural language into a set
+of categories.
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-115.png[]
+
+[%unnumbered]
+image::figure-116.png[]
+
+[%unnumbered]
+image::figure-117.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.15]]
+=== Schedule by day of week
+
+Name: Schedule by day of week
+
+Definition: The nature and timings of a daily schedule by days of
+the week.
+
+Code: `'scheduleByDayOfWeek'`
+
+Remarks:
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-118.png[]
+
+[%unnumbered]
+image::figure-119.png[]
+
+[[sec_8.16]]
+=== Source indication
+
+Name: Source indication
+
+Definition: Information about the source document, publication, or
+reference from which object data or textual material included or referenced
+in a dataset are derived
+
+Code: `'sourceIndication'`
+
+Remarks:
+
+Aliases: SORIND
+
+[%unnumbered]
+image::figure-120.png[]
+
+[%unnumbered]
+image::figure-121.png[]
+
+[%unnumbered]
+image::figure-122.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.17]]
+=== Survey date range
+
+Name: Survey date range
+
+Definition: The complex attribute describes the period of the hydrographic
+survey, as the time between its sub-attributes.
+
+Code: `'surveyDateRange'`
+
+Remarks:
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-123.png[]
+
+[[sec_8.18]]
+=== Telecommunications
+
+Name: Telecommunications
+
+Definition: A means or channel of communicating at a distance by electrical
+or electromagnetic means such as telegraphy, telephony, or broadcasting.
+
+Code: `'telecommunications'`
+
+Remarks:
+
+Aliases: TELCOM
+
+[%unnumbered]
+image::figure-124.png[]
+
+[%unnumbered]
+image::figure-125.png[]
+
+[%unnumbered]
+image::figure-126.png[]
+
+[[sec_8.19]]
+=== Text content
+
+Name: Text content
+
+Definition: Textual material, or a pointer to a resource providing
+textual material. May be accompanied by basic information about its
+source and relationship to the source.
+
+Code: `'textContent'`
+
+Remarks: textContent is intended to allow text passages from other
+publications to be included in, or referenced by, instances of feature
+or information types. Exactly one of sub-attributes onlineResource
+or information must be completed in one instance of textContent. Product
+specifications may restrict the use or content of onlineResource for
+security. For example, a product specification may forbid populating
+onlineResource. Product specification authors must consider whether
+applications using the data product may be prevented from accessing
+off-system resources by security policies.
+
+Aliases: TXTCON
+
+[%unnumbered]
+image::figure-127.png[]
+
+[%unnumbered]
+image::figure-128.png[]
+
+Remarks:
+
+At least one of the sub-attributes must be populated.
+
+[[sec_8.20]]
+=== Time intervals by day of week
+
+Name: Time intervals by day of week
+
+Definition: Time intervals by days of the week.
+
+Code: `'timeIntervalsByDayOfWeek'`
+
+Remarks:
+
+Aliases: (none)
+
+[%unnumbered]
+image::figure-129.png[]
+
+[%unnumbered]
+image::figure-130.png[]
+
+Values of dayOfWeekIsRange:
+
+* True (1): dayOfWeek co-attribute encodes a range of days of the
+week
+* False (0): dayOfWeek co-attribute encodes individual days of the
+week
+
+Remarks:
+
+* At least one of (dayOfWeek, timeOfDayStart, timeOfDayEnd) must be
+encoded
+* The number of timeOfDayStart and timeOfDayEnd attributes must be
+equal
+* If more than one dayOfWeek is encoded, then dayOfWeekIsRange must
+be encoded.
+
+[[sec_8.21]]
+=== Underkeel allowance
+
+Name: Underkeel allowance
+
+Definition: A fixed figure, or a figure derived by calculation, which
+is added to draught in order to maintain the minimum underkeel clearance
+taking into account the vessel's static and dynamic characteristics,
+sea state, information from real time sensors and weather forecast,
+the reliability of the chart and variance from predicted height of
+tide or water level.
+
+Code: `'underkeelAllowance'`
+
+Remarks:
+
+Aliases: UKALNS
+
+[%unnumbered]
+image::figure-130.png[]
+
+[%unnumbered]
+image::figure-107.png[]
+
+Remarks:
+
+At least one of the sub-attributes underkeelAllowance Fixed/BeamBased/DraughtBased must be encoded.
+
+[[sec_8.22]]
+=== Vessels measurements
+
+Name: Vessels measurements
+
+Definition: Terms and definitions specifically related to vessels
+
+Code: `'vesselsMeasurements'`
+
+Remarks:
+
+Aliases: VSLMS
+
+[%unnumbered]
+image::figure-131.png[]
+
+[%unnumbered]
+image::figure-132.png[]
+
+[%unnumbered]
+image::figure-133.png[]
+
+[%unnumbered]
+image::figure-134.png[]

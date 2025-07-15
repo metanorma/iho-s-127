@@ -1,0 +1,6 @@
+
+[[sec_9]]
+== Other elements
+
+Roles, associations, and simple attributes are described in the printable
+Feature Catalogue (Appendix C-1) and are not described in this DCEG.

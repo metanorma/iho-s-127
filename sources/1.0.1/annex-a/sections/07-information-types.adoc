@@ -1,0 +1,691 @@
+
+[[sec_7]]
+== Information types
+
+[[sec_7.1]]
+=== Information Type
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *INFORMATIONTYPE*. Generalized information
+type which carries all the common attributes
+8+| *[underline]#S-127 Information Feature:# Information Type (Abstract)*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+8+|
+[%unnumbered]
+image::figure-71.png[]
+
+8+| *[underline]#Information associations#*
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+8+|
+[%unnumbered]
+image::figure-72.png[]
+
+8+| INT 1 Reference:
+
+Where a complex attribute has all its sub-attributes optional
+(e.g., multiplicity 0..1 or 0..*), at least one of the sub-attributes
+must be populated.
+
+The *featureName* attribute of an instance of an information type
+can be used for a short title that is either a proper name
+(if such is relevant) or which describes the instance. For example,
+the *featureName* attribute of an *Authority* information type can
+be the name of a government agency.*featureName* attributes of information
+types should not duplicate the geographic feature name of an associated
+feature, but should pertain to the information instance itself.
+The *featureName* attribute should be populated only if the value
+conveys useful information to the end user. Some examples of such
+situations are:
+
+* providing the name of an organisation, such as the name of an Authority.
+* distinguishing between instances -- if multiple instances of the
+same information type are associated to the same feature type
+(or another information type), the different instances may be given
+descriptive names to make it easier for the mariner to distinguish
+their content.
+Some information instances are associated to multiple features, in
+which case its name should be general enough to be relevant to all
+the features.
+
+For example, if naming *Regulations* instances describing fishing
+regulations for protected areas, consider whether (for example) there
+is a general regulation applicable to all protected areas in a jurisdiction
+and an exceptional regulations object associated to a single area
+or a subset of areas in the jurisdiction. In this situation, the general
+regulations may be encoded with the name "General fishing regulations
+for Marine Conservation Areas" and associated to several MPA features,
+while a specific MPA feature can also have a specific regulation whose
+name is "Special fishing regulations for (named area)".
+
+The *featureName* attribute in complex attribute *sourceIndication*
+is intended for the name of the source.
+
+The *AdditionalInformation* association to a *NauticalInfomation*
+object can be used to attach an additional chunk of information to
+an information type, and there is no applicable specific information
+type or association. This should be used sparingly if at all.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_7.2]]
+=== AbstractRxN
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *ABSTRACTRXN*. An abstract superclass
+for information types that encode rules, recommendations, and general
+information in text or graphic form.
+
+Remark: Subtypes of *AbstractRxN* carry the same attributes, but differ
+in the nature of information they encode. There are currently four
+such subtypes: *Regulations*, *Restrictions*, *Recommendations*, and
+*Nautical Information*.
+8+| *[underline]#S-127 Information Type:# AbstractRxN (Abstract)*
+
+*Supertype: InformationType*
+
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-73.png[]
+
+This diagram contains only the direct attributes of *AbstractRxN*
+and selected sub-attributes of its complex attributes (those used
+for classifying instances and the activities to which they apply).
+For details about the lower-level attributes which are not depicted
+in this diagram, see the appropriate sub-clause in Clause 8 and the
+applicable section of the printable Feature Catalogue (App. C-1).
+
+8+| *[underline]#Information associations#*
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+8+|
+[%unnumbered]
+image::figure-74.png[]
+
+|===
+
+INT 1 Reference:
+
+[[sec_7.2.1]]
+==== Abstract supertype for information from textual sources
+
+*AbstractRxN* is the supertype of the four types intended primarily
+for encoding information from regulatory or other text sources.
+The attributes *categoryOfRxN* and *actionOrActivity* should be encoded
+wherever possible in order to allow software to classify the content
+according to the type of regulation (*categoryOfRxN*) and its effects
+on common maritime activities by both commercial and recreational
+vessels.
+
+At least one of the attributes *textContent* and *graphic* must be
+populated.
+
+Subtypes of *AbstractRxN* must not be associated to *Nautical Information*,
+since this leads to chains of information types which have little
+or no meaning in reality.
+
+[underline]#Remarks:#
+
+* Association _AssociatedRxN_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance or encoded using the generic inverse
+association _invInformationAssociation_ instead of the named role.
+
+[underline]#Distinction:#
+
+[[sec_7.3]]
+=== Nautical Information
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *NAUTICAL INFORMATION* Nautical information
+about a related area or facility.
+8+| *[underline]#S-127 Information Feature:# Nautical information*
+
+*Supertype: AbstractRxN*
+
+8+| *[underline]#Primitives:# None*
+
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-75.png[]
+
+8+h| [underline]#Information associations#
+h| Role Type 2+h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-76.png[]
+
+8+| INT 1 Reference:
+
+Nautical information is intended for material that is largely informative
+in nature, of which does not fit into the category of regulation,
+recommendation, or restriction.
+
+[underline]#Remarks:#
+
+* Association _AdditionalInformation_ may be with a geographic feature
+or an information type. Association _AssociatedRxN_ is with a geographic
+feature. While an association from geographic feature to information
+type can be encoded in the geographic feature instance, the reverse
+association from the information type to the geographic feature may
+be omitted from the information type instance or encoded using the
+generic inverse association _invInformationAssociation_ instead of
+the named role.
+* In theory, *Nautical Information* can be associated with any geographic
+feature through either an _AdditionalInformation_ or _AssociatedRxN_
+association. _AdditionalInformation_ should be used only when the
+information encoded in *Nautical Information* is general in nature
+and does not supplement information encoded in a *Regulations*, *Restrictions*,
+or *Recommendations* object associated to the same feature.
+* According to a purely theoretical reading of the model,
+*Nautical Information* can be associated to another *Nautical Information*,
+*Regulations*, *Restrictions*, or *Recommendations* instance using
+the _AdditionalInformation_ association inherited from
+*Information Type*. This is not permitted due to the undefined semantics
+of chaining RxN types (i.e., such chaining has little or no significant
+meaning and has not been given any special meaning in the model).
+
+[underline]#Distinction:# *Regulations, Recommendations, Restrictions*
+
+|===
+
+[[sec_7.4]]
+=== Regulations
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *REGULATIONS* Regulations for a related
+area or facility.
+8+| *[underline]#S-127 Information Feature:# Regulations*
+
+*Supertype: AbstractRxN*
+
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-77.png[]
+
+8+| *[underline]#Information associations#*
+
+h| Role Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-78.png[]
+
+8+|
+[underline]#NT 1 Reference:#
+
+Regulations features are intended to be used for official rules, laws,
+and similar source material, i.e., sources that have the force of
+law or are mandated by a controlling authority. They will generally
+originate from some kind of administration or authority, including
+port authorities.
+
+[underline]#Remarks:#
+
+* Association _AssociatedRxN_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance or encoded using the generic inverse
+association _invInformationAssociation_ instead of the named role.
+
+[underline]#Distinction:# *Nautical Information, Recommendations, Restrictions*
+
+|===
+
+[[sec_7.5]]
+=== Restrictions
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *RESTRICTIONS* Restrictions for a
+related area or facility.
+8+| *[underline]#S-127 Information Feature:# Restrictions*
+
+*Supertype: AbstractRxN*
+
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+
+[%unnumbered]
+image::figure-79.png[]
+
+8+| *[underline]#Information associations#*
+h| Role Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Multiplicity
+8+|
+
+[%unnumbered]
+image::figure-80.png[]
+
+8+|
+
+[underline]#INT 1 Reference:#
+
+*Restrictions* is intended for restrictions that constrain the activities
+of vessels temporarily with or without the legal force, or for longer
+terms without the force of law; they may be issued by a local authority
+such as a port captain or US Coast Guard district.
+
+[underline]#Remarks:#
+
+* Association _AssociatedRxN_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance or encoded using the generic inverse
+association _invInformationAssociation_ instead of the named role.
+
+[underline]#Distinction:# *Nautical Information, Recommendations, Regulations*
+
+|===
+
+[[sec_7.6]]
+=== Recommendations
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *RECOMENDATIONS* Recommendations
+for a related area or facility.
+8+| *[underline]#S-127 Information Feature:# Recommendations*
+
+*Supertype: AbstractRxN*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+
+[%unnumbered]
+image::figure-81.png[]
+
+8+| *[underline]#Information associations#*
+
+h| Role Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-82.png[]
+
+8+| INT 1 Reference:
+
+[underline]#Remarks:#
+
+* Association _AssociatedRxN_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance or encoded using the generic inverse
+association _invInformationAssociation_ instead of the named role.
+
+[underline]#Distinction:# *Nautical Information, Recommendations, Restrictions*
+
+|===
+
+[[sec_7.7]]
+=== Authority
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *AUTHORITY*. A person or organization
+that has the legally delegated or invested authority, capacity, or
+power to perform a designated function or exert administrative control.
+
+8+| *[underline]#S-127 Information Feature:# Authority*
+
+*Supertype: Information Type*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+
+[%unnumbered]
+image::figure-83.png[]
+
+8+| *[underline]#Information associations#*
+
+h| Type h| Association Name h| Class h| Role h| Mult h| Class h| Role h| Mult
+
+8+|
+
+[%unnumbered]
+image::figure-84.png[]
+
+8+| INT 1 Reference:
+
+[underline]#Remarks:#
+
+* No remarks.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_7.8]]
+=== Contact Details
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *CONTACT DETAILS*. Information on
+how to reach a person or organisation by postal, internet, telephone,
+telex and radio systems.
+8+| *[underline]#S-127 Information Feature:# Contact Details*
+
+*Supertype: Information Type*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+
+[%unnumbered]
+image::figure-85.png[]
+
+8+| *[underline]#Information associations#*
+
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+8+|
+
+[%unnumbered]
+image::figure-86.png[]
+
+8+| INT 1 Reference:
+
+When the complex attribute *radioCommunications* is used in
+*Contact Details*, it can have only the sub-attributes indicated in
+this table.
+
+[underline]#Remarks:#
+
+* If it is required to encode call name in different languages, this
+must be done by associating an instance of *Contact Details* per language,
+with the originating instance. The *Language* attribute must be used
+to designate the language of the instance.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_7.9]]
+=== Ship Report
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *SHIP REPORT*. This describes how
+a ship should report to a maritime authority, including when to report,
+what to report and whether the format conforms to the IMO standard.
+8+| *[underline]#S-127 Information Feature:# Ship Report*
+
+*Supertype: Information Type*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-87.png[]
+
+8+| *[underline]#Information associations#*
+
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-88.png[]
+
+8+| INT 1 Reference:
+
+[underline]#Remarks:#
+
+* *textContent* is used to describe non-standard ship reports.
+The associated information object *Applicability* indicates characteristics
+of vessels which use this report.
+* Association _TrafficServRept_ is with a geographic feature. While
+an association from geographic feature to information type can be
+encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance or encoded using the generic inverse
+association _invInformationAssociation_ instead of the named role.
+* If it is required to encode one or more pre-arrival reporting times,
+it must be done using the complex attribute *noticeTime*, and the
+required time in hours before arrival in the attribute *noticeTimeHours*.
+Further explanations for the reporting time can be added in the *noticeTimeText*
+attribute.
+* Distinction:
+
+|===
+
+[[sec_7.10]]
+=== Non Standard Working Day
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *NON STANDARD WORKING DAY*.
+Days when many services are not available. Often days of festivity
+or recreation or public holidays when normal working hours are limited,
+especially a national or religious festival, etc.
+8+| *[underline]#S-127 Information Feature:# Non Standard Working Day*
+
+*Supertype: Information Type*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+
+[%unnumbered]
+image::figure-90.png[]
+
+8+| *[underline]#Information associations#*
+
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+8+|
+
+[%unnumbered]
+image::figure-91.png[]
+
+8+| INT 1 Reference:
+
+[underline]#Remarks:#
+
+* Non-standard workdays which cannot be represented using fixed or
+variable dates should be encoded using the *information* complex attribute,
+preferably as a short description in the *text* sub-attribute of *information*.
+The information attribute can also be used for encoding any additional
+explanatory information if the explanation is essential knowledge
+for specifying the day.
+* The two date range attributes (fixed and periodic date range) should
+be used if the non-standard day applies only in specific years or
+periods (e.g., seasonally).
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_7.11]]
+=== Service Hours
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+
+8+| [underline]#IHO Definition:# *SERVICE HOURS* The time when a service
+is available and known exceptions.
+8+| *[underline]#S-127 Information Feature:# Service Hours*
+
+*Supertype: Information Type*
+8+| *[underline]#Primitives:# None*
+
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+
+[%unnumbered]
+image::figure-92.png[]
+
+8+| *[underline]#Information associations#*
+
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+8+|
+
+[%unnumbered]
+image::figure-94.png[]
+
+8+| INT 1 Reference:
+
+Seasonal variations in service hours can be encoded using multiple
+*Service Hours* instances with appropriate *periodicDateRange* values.
+
+[underline]#Remarks:#
+
+* The two _LocationHours_ associations are with geographic features.
+While an association from geographic feature to information type can
+be encoded in the geographic feature instance, the reverse association
+from the information type to the geographic feature may be omitted
+from the information type instance or encoded using the generic inverse
+association _invInformationAssociation_ instead of the named role.
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_7.12]]
+=== Applicability
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *APPLICABILITY* Describes the relationship
+between vessel characteristics and: (i) the applicability of an associated
+information object or feature to the vessel; or, (ii) the use of a
+facility, place, or service by the vessel; or, (iii) passage of the
+vessel through an area.
+8+| *[underline]#S-127 Information Feature:# Applicability*
+
+*Supertype: InformationType*
+8+| *[underline]#Primitives:# None*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+
+[%unnumbered]
+image::figure-94.png[]
+
+Values of *inBallast*:
+
+* True (1): Vessel is predominantly empty of cargo and stabilised
+with the use of ballast water.
+* False (0): Vessel is carrying cargo and is not ballasted.
+
+8+| *[underline]#Information associations#*
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+8+|
+
+[%unnumbered]
+image::figure-95.png[]
+
+INT 1 Reference:
+
+[underline]#Remarks:#
+
+* Vessel characteristics are specified as follows:
++
+--
+BALAST: The vessel is ballasted as described by this attribute.
+
+VSLMSM: The vessel or cargo matches the attribute value (for multi-valued
+attributes, matches at least one of the values).
+
+ICECAP, UKCLRN, PRFMNC attributes: The vessel matches the specified
+requirement. Absent attributes or null values are ignored.
+
+LOGCON states whether "all" or "at least one" of the specifications
+must be met.
+
+CATREL indicates the relationship between matching vessels and the
+associated information object or feature.
+
+====
+With one instance of APPLIC:
+
+VSLMSM [VSLCAR=length, VSLUNT=metre, COMPOP=greater than, VSLVAL=50],
+CATVSL=3 (tanker), LOGCON=1 (and), CATREL=5 (required); associated
+to a PILBOP object: tankers with LOA > 50.0 m must use the PILBOP
+
+PRFMNC="Vessels with thrusters", MBRSHP=2; associated to a REGLTS
+object: Vessels with thrusters are exempted from the regulation.
+
+If VSLMSM becomes repeatable:
+
+VSLMSM [VSLCAR=length, VSLUNT=metre, COMPOP=(>), VSLVAL=50], VSLMSM
+[VSLCAR=length, VSLUNT=metre, COMPOP=(<), VSLVAL=90], CATDHC=19, LOGCON=1
+(and), MBRSHP=1 (included);
+
+associated with *Regulations*: the regulation applies to vessels with
+LOA greater than 50.0 and less than 90.0 m. carrying MARPOL Class
+8 corrosive substances.
+
+Same situation as above with one instance of VSLMSM:
+
+VSLMSM [[VSLCAR=length; VSLUNT=metre, VSLVAL=50; COMPOP=(>)],[VSLCAR=length;
+VSLUNT=metre, VSLVAL=90; COMPOP=(<)]], CATVSL=3 (tanker), LOGCON=1
+(and), MBRSHP=1 (included);
+
+associated with a REGLTS: the regulation applies to vessels with LOA
+greater than 50.0 and less than 90.0 m. carrying MARPOL Class 8 corrosive
+substances.
+====
+--
+
+* Multiple values of *Category of Cargo* and of
+*Category of Dangerous Or Hazardous Cargo* should be treated as
+"inclusive OR" (i.e., if *Category of Cargo*=1 and 2, then it means
+vessels with either bulk or container cargo or both).
+
+[underline]#Distinction:#
+
+|===
