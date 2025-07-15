@@ -1,0 +1,59 @@
+
+[[sec_6]]
+== Cartographic Features
+
+This product specification uses the *Text Placement* cartographic
+features derived from S-101 (version 1.0). The structure of the feature
+and its usage are the same as in S-101 but the feature specification
+in S-127 omits elements which are not relevant to marine protected
+areas, for example, 'light characteristic' is omitted as a listed
+value for the attribute *text type*.
+
+[[sec_6.1]]
+=== Text Placement
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *TEXT PLACEMENT:* The Text Placement
+feature is used in association with the Feature Name attribute or
+a light description to optimise text positioning in ECDIS.
+8+| *S-122 Cartographic Feature: Text Placement*
+8+| *[underline]#Primitives:# Point*
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-122 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+8+|
+[%unnumbered]
+image::figure-69.png[]
+
+8+| *[underline]#Information associations#*
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+8+|
+
+[%unnumbered]
+image::figure-70.png[]
+
+|===
+
+[[sec_6.1.1]]
+==== Text Placement
+If it is required to place text to improve clarity of display, it
+must be done using the cartographic feature *Text Placement*.
+The *Text Placement* feature must be associated with the relevant
+geo feature using the association _TextAssociation_.
+
+[underline]#Remarks:#
+
+* The *Text Placement* feature is used by the ECDIS to position the
+associated text, which has been populated using an attribute(s) for
+the related feature. This attribute is identified by populating the
+attribute text type. Alternatively, the text to be displayed may be
+encoded using the attribute text.
+* Only one of the attributes text or text type is allowable for each
+instance of *Text Placement*.
+* *Text Placement* should only be associated with features of type
+point, and used in areas where it is important that text clear navigationally
+relevant areas, for example shipping channels and dredged areas.
+
+[underline]#Distinction:#

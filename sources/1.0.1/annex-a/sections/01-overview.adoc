@@ -1,0 +1,387 @@
+
+== Overview
+
+=== Preface
+
+The "Data Classification and Encoding Guide" has been developed to
+provide consistent, standardized instructions for encoding S-100 compliant
+Marine Traffic Management (S-127) data.
+
+The purpose of the Data Classification and Encoding Guide is to facilitate
+S-127 encoding to meet IHO standards for the proper display of Marine
+Traffic Management information in an ECDIS and other electronic charting
+displays. This document describes how to encode information that the
+modeller considers relevant to a Traffic Management data product.
+The content of a dataset is at the discretion of the producing authority
+provided that the conventions described within this document are followed.
+A "producing authority" is a Hydrographic Office (HO) or other organization
+authorized by a government, to produce definitive nautical information.
+
+The entire S-100 Universal Hydrographic Data Model, including the
+S-127 Product Specification, is available at the following web site,
+http://www.iho.int.
+
+=== S-127 Appendix A - Data Classification and Encoding Guide -- Metadata
+
+NOTE: This information uniquely identifies this Data Classification
+and Encoding Guide to the Product Specification and provides information
+about its creation and maintenance.
+
+[[table_1.1]]
+.Marine Traffic Management product specification metadata*
+[cols="99,196"]
+|===
+h| Metadata h| Content
+
+| *Title:*
+| The International Hydrographic Organization Marine Traffic Management
+Product Specification, Data Classification and Encoding Guide
+| *Version:*        | 1.0.01
+| *Date:*           | 29 15 November 20182019
+| *Language:*       | English
+| *Classification:* | Unclassified
+| *Contact:*
+| International Hydrographic Organization4 Quai Antione 1erB.P. 445MC
+98011 MONACO CEDEXTelephone: +377 93 10 81 00Fax: +377 93 10 81 40URL:
+www.iho.int
+| *Identifier:*     | S-127 Appendix A Data Classification and Encoding Guide
+| *Maintenance:*
+| Changes to S-127 Appendix A; Data Classification and Encoding Guide
+are coordinated by the IHO Nautical Information Provision Working
+Group (NIPWG) and must be made available via the IHO web site.
+
+|===
+
+[heading="terms and definitions"]
+=== Terms and definitions
+
+This list is identical with the list in the main body of this product
+specification.
+
+==== aggregation
+
+special form of {{association}} that specifies a whole-part relationship
+between the aggregate (whole) and a component (see composition)
+
+==== application
+
+manipulation and processing of data in support of user requirements
+
+[.source]
+<<ISO_19101>>
+
+==== application schema
+
+{{conceptual schema}} for data required by one or more {{application,applications}}
+
+[.source]
+<<ISO_19101>>
+
+==== association
+
+semantic relationship between two or more classifiers that specifies
+connections among their instances
+
+NOTE: A binary association is an association among exactly two classifiers
+(including the possibility of an association from a classifier to
+itself)
+
+==== attribute
+
+named property of an entity
+
+NOTE: Describes the geometrical, topological, thematic, or other characteristic
+of an entity
+
+==== boundary
+
+set that represents the limit of an entity
+
+[.source]
+<<ISO_19107>>
+
+==== composition
+
+special form of {{association}} that specifies a "strong aggregation".
+ In a composition association, if a container object is deleted then
+all of the objects it contains are deleted as well.
+
+==== conceptual model
+
+model that defines concepts of a {{universe of discourse}}
+
+[.source]
+<<ISO_19101>>
+
+==== conceptual schema
+
+formal description of a {{conceptual model}}
+
+[.source]
+<<ISO_19101>>
+
+==== coverage
+
+{{feature}} that acts as a function to return values from its range
+for any direct position within its spatial, temporal or spatiotemporal
+{{domain}}
+
+[.source]
+<<ISO_19123>>
+
+[example]
+Raster image, polygon overlay, digital elevation matrix.
+
+==== curve
+
+1-dimensional {{geometric primitive}}, representing the continuous
+image of a line
+
+NOTE: The {{boundary}} of a {{curve}} is the {{set}} of {{point,points}}
+at either end of the {{curve}}. If the {{curve}} is a cycle, the two
+ends are identical, and the {{curve}} (if topologically closed) is
+considered to not have a boundary. The first {{point}} is called the
+{{start point}}, and the last {{point}} is the {{end point}}. Connectivity
+of the curve is guaranteed by the "continuous image of a line"
+
+==== data product
+
+{{dataset}} or {{dataset series}} that conforms to a {{data product
+specification}}
+
+==== data product specification
+
+detailed description of a {{dataset}} or {{dataset series}} together
+with additional information that will enable it to be created, supplied
+to and used by another party
+
+NOTE: A data product specification provides a description of the universe
+of discourse and a specification for mapping the universe of discourse
+to a dataset. It may be used for production, sales, end-use or other
+purpose.
+
+==== dataset
+
+identifiable collection of data
+
+[.source]
+<<ISO_19115>>
+
+NOTE: A dataset may be a smaller grouping of data which, though limited
+by some constraint such as spatial extent or feature type, is located
+physically within a larger dataset. Theoretically, a dataset may be
+as small as a single feature contained within a larger dataset. A
+hardcopy map or chart may be considered a dataset.
+
+==== dataset series
+
+collection of {{dataset,datasets}} sharing the same product specification
+
+[.source]
+<<ISO_19115>>
+
+==== domain
+
+well-defined set
+
+[.source]
+<<ISO_TS_19103>>
+
+NOTE: Well-defined means that the definition is both necessary and
+sufficient, as everything that satisfies the definition is in the
+set and everything that does not satisfy the definition is necessarily
+outside the set.
+
+==== end point
+
+last point of a curve
+
+[.source]
+<<ISO_19107>>
+
+==== enumeration
+
+a fixed list which contains valid identifiers of named literal values.
+Attributes of an enumerated type may only take values from this list.
+
+==== feature
+
+abstraction of real world phenomena
+
+[.source]
+<<ISO_19101>>
+
+NOTE: A feature may occur as a type or an instance. Feature type or
+feature instance shall be used when only one is meant.
+
+[example]
+The feature instance named "Turning Torso Tower" may be classified
+with other phenomena into a feature type "tower".
+
+==== feature association
+
+relationship that links instances of one {{feature}} type with instances
+of the same or a different {{feature}} type
+
+[.source]
+<<ISO_19110>>
+
+NOTE: A feature association may occur as a type or an instance. Feature
+association type or feature association instance is used when only
+one is meant.
+
+NOTE: Feature associations include aggregation of features.
+
+==== feature attribute
+
+characteristic of a {{feature}}
+
+[.source]
+<<ISO_19101>>
+
+NOTE: A feature attribute may occur as a type or an instance. Feature
+attribute type or feature attribute instance is used when only one
+is meant.
+
+NOTE: A feature attribute type has a name, a data type and a domain
+associated to it. A feature attribute for a feature instance has an
+attribute value taken from the domain.
+
+==== geographic data
+
+data with implicit or explicit reference to a location relative to
+the Earth
+
+[.source]
+<<ISO_19109>>
+
+NOTE: Geographic information is also used as a term for information
+concerning phenomena implicitly or explicitly associated with a location
+relative to the Earth.
+
+==== geometric primitive
+
+geometric object representing a single, connected, homogeneous element
+of geometry
+
+NOTE: Geometric primitives are non-decomposed objects that present
+information about geometric configuration. They include {{point,points}},
+{{curve,curves}}, surface
+
+==== maximum display scale
+
+the largest value of the ratio of the linear dimensions of features
+of a dataset presented in the display and the actual dimensions of
+the features represented (largest scale) of the scale range of the
+dataset
+
+==== metadata
+
+data about data
+
+[.source]
+<<ISO_19115>>
+
+==== minimum display scale
+
+the smallest value of the ratio of the linear dimensions of features
+of a dataset presented in the display and the actual dimensions of
+the features represented (smallest scale) of the scale range of the
+dataset
+
+==== model
+
+abstraction of some aspects of reality
+
+[.source]
+<<ISO_19109>>
+
+==== point
+
+0-dimensional geometric primitive, representing a position
+
+NOTE: The {{boundary}} of a point is the empty set
+
+==== portrayal
+
+presentation of information to humans
+
+[.source]
+<<ISO_19117>>
+
+==== quality
+
+totality of characteristics of a product that bear on its ability
+to satisfy stated and implied needs
+
+[.source]
+<<ISO_19101>>
+
+==== set
+
+unordered collection of related items (objects or values) with no
+repetition
+
+[.source]
+<<ISO_19107>>
+
+==== start point
+
+first point of a curve
+
+[.source]
+<<ISO_19107>>
+
+==== surface
+
+connected 2-dimensional geometric primitive, representing the continuous
+image of a region of a plane
+
+NOTE: The boundary of a surface is the set of oriented, closed {{curve,curves}}
+that delineate the limits of the surface
+
+==== universe of discourse
+
+view of the real or hypothetical world that includes everything of
+interest
+
+[.source]
+<<ISO_19101>>
+
+=== Abbreviations
+
+[[table_1-3]]
+.List of abbreviations
+[cols="2"]
+|===
+| DCEG  | Data Classification and Encoding Guide
+| ECDIS | Electronic Chart Display and Information System
+| ENC   | Electronic Navigational Chart
+| GML   | Geography Markup Language
+| HO    | Hydrographic Office
+| IHO   | International Hydrographic Organization
+| IMO   | International Maritime Organization
+| ISO   | International Organization for Standardization
+| MTM   | Marine Traffic Management
+| RENC  | Regional ENC co-ordinating centre
+| UML   | Unified Modelling Language
+| URL   | Universal Resource Locator
+| XML   | eXtensible Markup Language
+|===
+
+=== Use of language
+
+Within this document:
+
+"Must" indicates a mandatory requirement;
+
+"Should" indicates an optional requirement, that is the recommended
+process to be followed, but is not mandatory;
+
+"May" means "allowed to" or "could possibly", and is not mandatory,
+or recommended.
+
+=== Maintenance
+
+Changes to the Data Classification and Encoding Guide must occur in
+accordance with the S-127 Product Specification see <<sec_4.3>>.

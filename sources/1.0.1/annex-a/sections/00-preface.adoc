@@ -1,0 +1,19 @@
+
+[.preface]
+== Document Control
+
+[cols="6",options="unnumbered,noheader"]
+|===
+h| Version h| Version Type h| Date h| Approved By h| Signed Off By h| Role
+
+| 0.1        | Draft                                  | 2018-05-31 | | |
+| 0.2        | Adjudicate comments from first review  | 2018-08-24 | | |
+| 1.0.0 RC1  | Adjudicate comments from second review | 2018-11-29 | | |
+| 1.0.1
+| Clarifications based on feedback on Dec. 2018 version; removal of unused elements;
+updated figures which included updated application schema elements
+| 2019-11-15 |                                        |            |
+|            |                                        |            | | |
+|            |                                        |            | | |
+|===
+

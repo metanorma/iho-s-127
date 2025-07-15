@@ -1,0 +1,227 @@
+
+[[sec_4]]
+== Metadata Features
+
+[[sec_4.1]]
+=== Introduction
+
+The maximum use must be made of meta features to reduce the attribution
+on individual features. Some meta features are mandatory in a dataset;
+see S-127 Product Specification main document clauses 10.9 and 10.11.
+
+[[sec_4.2]]
+=== Mandatory meta features
+
+The mandatory meta features are given in the following list:
+
+*Data Coverage*
+
+*Quality of non-Bathymetric Data*
+
+[[sec_4.3]]
+=== Data coverage meta feature
+
+*Data Coverage*: In order to assist in data discovery, the meta feature
+*Data Coverage* must be used to provide the area of coverage of the
+S-127 dataset. This means that *Data Coverage* expresses where the
+presence or absence of S-127 geographic features is asserted. Unlike
+S-101 datasets, there is no 'skin of the earth' principle in S-127
+and there may be regions covered by a *Data Coverage* but where no
+geographic S-127 feature is present.
+
+[cols="7",options="unnumbered,noheader"]
+|===
+7+| [underline]#IHO Definition:# *DATA COVERAGE*. A geographical area
+that describes the coverage and extent of spatial types.
+(Adapted from S-57 Edition 3.1, Appendix A -- Chapter 1, Page 1.210,
+November 2000).
+7+| *[underline]#S-127 Metadata Feature:# Data Coverage (M_COVR)*
+7+| *[underline]#Primitives:# Surface*
+
+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+2+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+7+a|
+
+[%unnumbered]
+image::figure-11.png[]
+
+There are no associations for *Data Coverage* features.
+
+7+a| [underline]#INT 1 Reference:#
+
+The meta feature *Data Coverage* encodes the area covered by the dataset.
+This feature is also used to provide the ECDIS with the scale information
+necessary for the determination of dataset loading and unloading in
+relation to the user selected viewing scale in the ECDIS. There must
+be a minimum of one *Data Coverage* feature in a dataset. *Data Coverage*
+features must cover at least the extent of the spatial types in the
+dataset, and must not overlap.
+
+The use of S-127 data is scale-independent (see <<sec_2.8>>) and minimum
+display scale will normally be (null) and maximum display scale 1000
+(the extreme values in the table of scales in the S-101 ENC,
+see <<table_2-11>>). Should a producer need to encode different maximum
+and minimum display scales from the extreme (i.e., create scale-dependent
+datasets), the values of maximum and minimum display scales should
+be harmonized with base layer S-101 datasets (see the S-101 DCEG clause
+3.4.1).
+
+Given that S-127 data will overlay ENC and possibly other datasets,
+the conditions described in S-101 clause 3.4.1 for displaying overscale
+warnings and setting the viewing scale may be overridden by interoperability
+constraints or the presence of higher-priority datasets. The specification
+of such behaviour is out of scope for this document (the S-100 interoperability
+specification should address it for ECDIS).
+
+[underline]#Remarks:#
+
+* This meta feature is intended to support an indication of coverage.
+* Where a dataset consists of only one Data Coverage feature, the
+value for the maximum display scale populated in the dataset discovery
+metadata must be the same as the value populated for maximum display
+scale on the Data Coverage.
+* For any *Data Coverage* feature, maximum display scale < minimum
+display scale.
+
+[underline]#Distinction:# None
+
+|===
+
+[[sec_4.4]]
+=== Data Quality
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *DATA QUALITY.* Abstract feature
+type for data quality meta-features.
+8+| *[underline]#S-87 Geo Feature:# Data Quality (Abstract)*
+8+| *[underline]#Primitives:# Surface*
+
+2+| _Real World_ 3+| _Paper Chart Symbol_ 3+| _ECDIS Symbol_
+
+3+h| S-127 Attribute 2+h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+3+| 2+| | | |
+
+8+h| [underline]#Information associations#
+
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+
+| | | | | | | |
+
+8+|
+
+[%unnumbered]
+image::figure-12.emf[]
+
+[%unnumbered]
+image::figure-13.emf[]
+
+There are no associations for *Data Quality*.
+
+[underline]#INT 1 Reference:#
+
+++[no reference]++
+
+[underline]#Remarks:#
+
+++[no remarks]++
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_4.5]]
+=== Quality of Temporal Variation
+
+[cols="a,a,a,a,a,a,a,a",options="unnumbered,noheader"]
+|===
+8+| [underline]#IHO Definition:# *QUALITY OF TEMPORAL VARIATION.*
+Abstract type for meta-feature which can describe temporal variation.
+8+| *[underline]#S-87 Geo Feature:# Quality Of Temporal Variation (Abstract)*
+
+*SuperType: Data Quality (Abstract)*
+8+| *[underline]#Primitives:# Surface*
+
+3+| _Real World_ 3+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+3+h| S-127 Attribute h| S-57 Acronym 2+h| Allowable Encoding Value h| Type h| Multiplicity
+
+3+| | 2+| | |
+
+8+h| [underline]#Information associations#
+h| Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Mult.
+| | | | | | | |
+
+8+|
+[%unnumbered]
+image::figure-14.png[]
+
+There are no associations for *Quality Of Temporal Variation*.
+
+[underline]#INT 1 Reference:#
+
+++[no reference]++
+
+[underline]#Remarks:#
+
+++[no remarks]++
+
+[underline]#Distinction:#
+
+|===
+
+[[sec_4.6]]
+=== Quality of non-bathymetric data
+
+[cols="5",options="unnumbered,noheader"]
+|===
+5+| [underline]#IHO Definition:# *QUALITY OF NON-BATHYMETRIC DATA*.
+An area within which the best estimate of the overall uncertainty
+of the data is uniform. The overall uncertainty takes into account
+for example the source accuracy, chart scale, digitising accuracy
+etc. (Adapted from S-57 Edition 3.1, Appendix A -- Chapter 1, Page
+1.208, November 2000).
+5+| *[underline]#S-127 Metadata Feature:# Quality of non-bathymetric data (M_ACCY)*
+5+| *[underline]#Primitives:# Surface*
+
+*SuperType: Quality of Temporal Variation (Abstract)*
+
+| _Real World_ 2+| _Paper Chart Symbol_ 2+| _ECDIS Symbol_
+
+h| S-127 Attribute h| S-57 Acronym h| Allowable Encoding Value h| Type h| Multiplicity
+
+5+a|
+[%unnumbered]
+image::figure-15.png[]
+
+5+a|
+[underline]#INT 1 Reference:# Quality of positions
+
+The meta feature *Quality of Non-bathymetric Data* may be used to
+provide an indication of the overall uncertainty of position for all
+non-bathymetric features. It must not be used to provide the uncertainty
+of bathymetric information.
+
+The attribute *horizontal position uncertainty* may be applied to
+any spatial type, in order to qualify the location of a feature.
+
+*Horizontal distance uncertainty* and *horizontal position uncertainty*
+must not be applied to the spatial type of any geo feature if they
+are identical to the *horizontal distance uncertainty* and
+*position uncertainty* values of the underlying meta feature.
+
+*Position uncertainty* on the *Quality of Non-bathymetric Data* applies
+to non-bathymetric data situated within the area, while
+*position uncertainty* on the associated spatial types qualifies the
+location of the *Quality of Non-bathymetric Data* feature itself.
+
+[underline]#Remarks:#
+
+* No remarks.
+
+[underline]#Distinction:# [None].
+
+|===
