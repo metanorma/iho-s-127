@@ -2,7 +2,7 @@
 [[sec_15]]
 == Appendix D-1. GML Data Format Overview
 
-This data format conforms to the profile described in S-100 Part 10b,
+This data format conforms to the profile described in <<IHO_S_100,part=10b>>,
 which is based on GML. Each dataset in the XML dataset format consists
 of a root or container element DataSet, whose structure is shown in
 <<fig_33>> below. A _Dataset_ contains of optional header information
@@ -54,7 +54,7 @@ image::figure-35.png[]
 The structure of an example feature is shown in <<fig_36>>.
 The *PilotageDistrict* feature inherits the attributes of the S-127
 abstract feature *FeatureType*, which in turn is derived from generic
-S-100 type defined in the GML profile described in S-100 Part 10b;
+S-100 type defined in the GML profile described in <<IHO_S_100,part=10b>>;
 that in turn derives from the GML *AbstractFeature* type. *PilotageDistrict*
 therefore inherits attributes from S-127 abstract type *FeatureType*
 (attributes _fixedDateRange_, _periodicDateRange_, _featureName_,
@@ -95,7 +95,7 @@ encodings.
 NOTE: In S-100 edition 4.0.0, feature catalogues do not allow feature
 bindings to be added to information types because the S-100 GFM does
 not permit information types to have feature bindings, nor does the
-<<ISO_8211>> encoding in S-100 Part 10a permit such. In the interests
+<<ISO_8211>> encoding in <<IHO_S_100,part=10a>> permit such. In the interests
 of consistency across encodings, reverse links between information
 types and feature types are not used in GML format. If it is necessary
 to encode such reverse links from an information type to a feature

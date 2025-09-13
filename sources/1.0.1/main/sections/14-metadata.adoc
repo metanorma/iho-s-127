@@ -6,7 +6,7 @@
 === Introduction
 
 The MTM metadata specification conforms to the S-100 metadata specification
-in Part 4a, which is a profile of the <<ISO_19115_1>> standard. These
+in <<IHO_S_100,part=4a>>, which is a profile of the <<ISO_19115_1>> standard. These
 documents provide a structure for describing digital geographic data
 and define metadata elements, a common set of metadata terminology,
 definitions, and extension procedures.
@@ -91,15 +91,15 @@ or port name, between two named locations etc.
 | TRUE: Encrypted +
 FALSE: Unencrypted
 
-| protectionScheme | 0..1 | | S100_ProtectionScheme | See <<fig_32>> and S-100 Appendix 4a-D.
+| protectionScheme | 0..1 | | S100_ProtectionScheme | See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | digitalSignatureReference | 1 | | S100_DigitalSignature
 | Specifies the algorithm used to compute digitalSignatureValue. +
-See <<fig_32>> and S-100 Appendix 4a-D.
+See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | digitalSignatureValue | 1 | | S100_DigitalSignatureValue
 | The value resulting from application of digitalSignatureReference. +
-Implemented as the digital signature format specified in S-100 Part 15.
+Implemented as the digital signature format specified in <<IHO_S_100,part=15>>.
 
 | copyright | 0..1 | | MD_LegalConstraints>MD_RestrictionCode<copyright> (<<ISO_19115_1>>)
 | "copyright" for copyrighted datasets, omitted otherwise
@@ -139,7 +139,7 @@ a|
 
 | producingAgency | 1 | | CI_Responsibility>CI_Organisation or CI_Responsibility>CI_Individual
 | Party responsible for generating the dataset. +
-See Part 4a Tables 4a-2 and 4a-3.
+See <<IHO_S_100,table=4a-2>> and <<IHO_S_100,table=4a-3>>.
 
 | horizontalDatumReference | 1 | EPSG | CharacterString |
 
@@ -154,21 +154,21 @@ See Part 4a Tables 4a-2 and 4a-3.
 | dataTypeVersion | 1 | 3.2.1 | CharacterString |
 
 | dataCoverage | 1..* | | S100_DataCoverage
-| See <<fig_32>> and S-100 Appendix 4a-D. A new or new-edition S-127 dataset must have at least one coverage.
+| See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>. A new or new-edition S-127 dataset must have at least one coverage.
 
 | comment | 0..1 | | CharacterString | Any additional Information
 
 | layerID | 1..* | S-101 | CharacterString | Dataset must be used with ENC in an ECDIS. +
 Mandatory for S-127 new datasets and new editions.
 
-| defaultLocale | 1 | | PT_Locale | See <<fig_32>> and S-100 Appendix 4a-D.
+| defaultLocale | 1 | | PT_Locale | See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
-| otherLocale | 0..* | | PT_Locale | See <<fig_32>> and S-100 Appendix 4a-D.
+| otherLocale | 0..* | | PT_Locale | See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | metadataFileIdentifier | 1 | | CharacterString | For example, identifier for <<ISO_19115_3>> metadata file
 
 | metadataPointOfContact | 1 | | CI_Responsibility>CI_Individual or CI_Responsibility>CI_Organisation
-| See S-100 Part 4a Tables 4a-2 and 4a-3.
+| See <<IHO_S_100,table=4a-2>> and <<IHO_S_100,table=4a-3>>.
 
 | metadataDateStamp | 1 | | Date
 | Metadata creation date, which may or may not be the dataset creation date
@@ -225,11 +225,11 @@ same as base dataset.
 
 | digitalSignatureReference | 1 | | S100_DigitalSignature
 | Specifies the algorithm used tocompute digitalSignatureValue. +
-See <<fig_32>> and S-100 Appendix 4a-D.
+See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | digitalSignatureValue | 1 | | S100_DigitalSignatureValue
 | The value resulting from application of digitalSignatureReference. +
-Implemented as the digital signature format specified in S-100 Part 15.
+Implemented as the digital signature format specified in <<IHO_S_100,part=15>>.
 
 | copyright | 0..1 | | MD_LegalConstraints>MD_RestrictionCode<copyright> (<<ISO_19115_1>>)
 | Value must be same as base dataset.
@@ -259,7 +259,7 @@ a|
 
 | producingAgency | 1 | | CI_Responsibility>CI_Organisation or CI_Responsibility>CI_Individual
 | Party responsible for generating the dataset. +
-See Part 4a Tables 4a-2 and 4a-3.
+See <<IHO_S_100,table=4a-2>> and <<IHO_S_100,table=4a-3>>.
 
 | horizontalDatumReference | 1 | EPSG | CharacterString |
 
@@ -274,18 +274,18 @@ See Part 4a Tables 4a-2 and 4a-3.
 | comment | 0..1 | | CharacterString | Any additional Information
 
 | defaultLocale | 1 | | PT_Locale | Must be same as base dataset. +
-See <<fig_32>> and S-100 Appendix 4a-D.
+See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | otherLocale | 0..* | | PT_Locale
 | Must be same as base dataset. +
-See <<fig_32>> and S-100 Appendix 4a-D.
+See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | metadataFileIdentifier | 1 | | CharacterString
 | For example, for <<ISO_19115_3>> metadata file
 
 | metadataPointOfContact | 1 |
 | CI_Responsibility>CI_Individual or CI_Responsibility>CI_Organisation
-| See S-100 Part 4a Tables 4a-2 and 4a-3.
+| See <<IHO_S_100,table=4a-2>> and <<IHO_S_100,table=4a-3>>.
 
 | metadataDateStamp | 1 | | Date
 | Metadata creation date, which may or may not be the dataset creation date
@@ -335,7 +335,7 @@ number remains the same for a re-issue
 | issueDate | 1 | | Date |
 
 | supportFileSpecification | 1 | | S100_SupportFileSpecification
-| See <<fig_32>> and S-100 Appendix 4a-D.
+| See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | dataType | 1 | | S100_SupportFileFormat
 | The only values allowed for support files referenced in datasets
@@ -348,15 +348,15 @@ Values XML, XSLT, and LUA are reserved for portrayal catalogue files.
 
 | digitalSignatureReference | 0..1 | | S100_DigitalSignature
 | Specifies the algorithm used to compute digitalSignatureValue. +
-See <<fig_32>> and S-100 Appendix 4a-D.
+See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 | digitalSignatureValue | 0..1 | | S100_DigitalSignatureValue
 | The value resulting from application of digitalSignatureReference. +
-Implemented as the digital signature format specified in S-100 Part 15.
+Implemented as the digital signature format specified in <<IHO_S_100,part=15>>.
 
-| defaultLocale | 1 | | PT_Locale | See <<fig_32>> and S-100 Appendix 4a-D.
+| defaultLocale | 1 | | PT_Locale | See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
-| otherLocale | 0..* | | PT_Locale | See <<fig_32>> and S-100 Appendix 4a-D.
+| otherLocale | 0..* | | PT_Locale | See <<fig_32>> and <<IHO_S_100,locality:appendix=4a-D>>.
 
 |===
 
@@ -405,7 +405,7 @@ h| Name h| Multiplicity h| Value h| Type h| Remarks
 | compressionFlag | 0..1 | | Boolean
 | TRUE: compressed +
 FALSE: not compressed +
-If compressed, the method must be that specified in S-100 Part 15.
+If compressed, the method must be that specified in <<IHO_S_100,part=15>>.
 
 | sourceMedia | 0..1 | | CharacterString |
 
@@ -424,14 +424,14 @@ If compressed, the method must be that specified in S-100 Part 15.
 
 
 NOTE: Attribute _productSpecification_: Class *S100_ProductSpecification*
-is depicted in <<fig_32>> and defined in S-100 Appendix 4a-D. The
+is depicted in <<fig_32>> and defined in <<IHO_S_100,locality:appendix=4a-D>>. The
 values of sub-attributes _name_ and _version_ must correspond to this
-version of the S-127 product specification. (Clause 4.2). The value
+version of the S-127 product specification. (<<sec_4.2>>). The value
 of sub-attribute _number_ must be the number assigned to this version
 of the S-127 product specification in the GI registry.
 
 NOTE: Attribute _catalogueIdentifier_: Class *S100_CatalogueIdentifier*
-is depicted in <<fig_32>> and defined in S-100 Appendix 4a-D.
+is depicted in <<fig_32>> and defined in <<IHO_S_100,locality:appendix=4a-D>>.
 The value of sub-attribute _S100_CatalogueIdentifier>identifier_ must
 be chosen so that a 1/1 mapping from exchange set name to catalogue
 identifier is recommended. This assumes a system for assigning unique
@@ -445,13 +445,13 @@ set may contain multiple datasets.
 *S100_CatalogueMetadata* describes feature, portrayal, and interoperability
 catalogues. This is an optional element that allows for descriptions
 of feature, interoperability, and portrayal catalogues that are delivered
-within the exchange set. This class is described in S-100 Part 4a
-Appendix 4a-D. S-127 uses the S-100 class without modification, with
-the following constraints on allowed values:
+within the exchange set. This class is described in
+<<IHO_S_100,locality:appendix=4a-D>>. S-127 uses the S-100 class without
+modification, with the following constraints on allowed values:
 
 .  Attribute _productSpecification_: For feature and portrayal catalogues,
 the values of sub-attributes _name_ and _version_ must correspond
-to this version of the S-127 product specification. (Clause 4.2).
+to this version of the S-127 product specification. (<<sec_4.2>>).
 For interoperability catalogues, the values of sub-attributes _name_
 and _version_ must correspond to the appropriate version of the S-98
 product specification.

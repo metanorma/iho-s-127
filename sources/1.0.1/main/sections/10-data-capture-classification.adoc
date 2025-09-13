@@ -138,7 +138,7 @@ displayed,
 * Some attributes are required for safety of navigation.
 
 All mandatory attributes are identified in the Feature Catalogue and
-summarised in Annex A -- Data Classification and Encoding Guide.
+summarised in <<S127AnnexA>>.
 
 [[sec_10.6]]
 === Unknown attribute values

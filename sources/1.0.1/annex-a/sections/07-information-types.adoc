@@ -107,7 +107,7 @@ This diagram contains only the direct attributes of *AbstractRxN*
 and selected sub-attributes of its complex attributes (those used
 for classifying instances and the activities to which they apply).
 For details about the lower-level attributes which are not depicted
-in this diagram, see the appropriate sub-clause in Clause 8 and the
+in this diagram, see the appropriate sub-clause in <<sec_8>> and the
 applicable section of the printable Feature Catalogue (App. C-1).
 
 8+| *[underline]#Information associations#*

@@ -63,3 +63,8 @@
 * [[[ISO_19115_3,hidden(ISO 19115-3)]]]
 
 * [[[ISO_8211,hidden(ISO 8211)]]]
+
+* [[[S127AnnexA,dropid(repo:(current-metanorma-collection/IHO S-127 Annex A))]]],
+span:title[S-127 -- Annex A: Data Classification and Encoding Guide],
+span:edition[1.0.1],
+span:organization[International Hydrographic Organization]

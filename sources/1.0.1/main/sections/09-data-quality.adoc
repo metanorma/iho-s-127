@@ -33,7 +33,7 @@ For S-127 the following data quality elements have been included:
 [[sec_9.2]]
 === Quality measure elements
 
-The data quality measures recommended in S-97 (Part C) and their applicability
+The data quality measures recommended in <<IHO_S_97,part=C>> and their applicability
 in S-127 are indicated in <<table_9.1>> below. NA indicates the measure
 is not applicable. This table reproduces the first 4 columns of the
 data quality checklist recommended elements and replaces the final
@@ -210,7 +210,7 @@ if the dataset/dataset series have passed the Product Specifications.
 The elements which must be included are described in <<table_9.2>>.
 
 [[table_9.2]]
-.Elements of data quality aggregated report (extract from S-97 Part C checklist)
+.Elements of data quality aggregated report (extract from <<IHO_S_97,part=C>> checklist)
 [cols="5"]
 |===
 h| Data quality element and sub element h| Definition h| DQ measure / description h| Evaluation scope h| Applicable to spatial representation types
