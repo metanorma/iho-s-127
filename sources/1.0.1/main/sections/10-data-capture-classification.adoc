@@ -160,8 +160,8 @@ and function (optional attribute). The feature could be coded as:
 <Landmark>
   <categoryOfLandmark xsi:nil="true"/>
   <function>radio</function>
-  … other attributes…
-  … <status> is NOT coded …
+  ... other attributes...
+  ... <status> is NOT coded ...
 <Landmark>
 --
 =====
@@ -234,4 +234,4 @@ dataset.
 [[sec_10.12]]
 === Data extent
 
-Datasets must not cross the 180° meridian of longitude
+Datasets must not cross the stem:[180 "unitsml(deg)"] meridian of longitude

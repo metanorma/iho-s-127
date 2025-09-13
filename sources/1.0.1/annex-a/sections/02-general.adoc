@@ -547,7 +547,7 @@ years.
 ===== Predefined derived types
 
 <<table_2-6>> presents the following predefined derived types which
-are described in S-100 (§ 1-4.6 in Edition 4.0.0):
+are described in S-100 (<<IHO_S_100,clause=1-4.6>> in Edition 4.0.0):
 
 [[table_2-6]]
 .Predefined derived types
@@ -671,7 +671,7 @@ exactly 4 digits.
 ===== Complete Dates (Informative)
 
 Complete date values must be encoded in conformance with the Date
-format as specified in S-100 Ed. 4.0.0 (§§ 1-4.5.2) which is the same
+format as specified in S-100 Ed. 4.0.0 (<<IHO_S_100,clause=1-4.5.2>>) which is the same
 as the DA format in <<table_2-2>> in this document. The data values
 have to be provided in accordance with the Gregorian Calendar starting
 with four digits for the year, two digits for the month and two digits
@@ -691,12 +691,14 @@ In the GML format: <date>2010-09-18</date>
 In Truncated Dates one or more components (year, month, or day) of
 the date is not specified. Truncated date values must be encoded in
 conformance with the S100_TruncatedDate format or equivalent as specified
-in S-100 Ed. 4.0.0 (§§ 1-4.5.2 and 3-9) which is the same as the _TD_
+in S-100 Ed. 4.0.0 (<<IHO_S_100,clause=1-4.5.2>> and
+<<IHO_S_100,clause=3-9>>) which is the same as the _TD_
 format in <<table_2-2>> in this document. If encoding attributes which
 can take truncated date values (e.g., *fixedDateRange*, *periodicDateRange*,
 *reportedDate*) and no specific year, month, or day is required, the
 values must be encoded in conformance with the truncated date format
-as specified in S-100 (§§ 1-4.5.2 and 3-9 in Edition 4.0.0) which
+as specified in S-100 (<<IHO_S_100,clause=1-4.5.2>> and
+<<<<IHO_S_100,clause=3-9>> in Edition 4.0.0) which
 defines a default format (for ISO 8211) but also allows the use of
 built-in types.
 
@@ -722,7 +724,7 @@ the dashes).
 
 ===== Start and end of ranges
 
-In accordance with S-100 Ed. 4.0.0 § 3-8, the start and end instants
+In accordance with <<IHO_S_100,clause=3-8>>, the start and end instants
 of a range or period are included in the range or period.
 
 [example]
@@ -741,7 +743,7 @@ the period is encoded as pass-format:metanorma[----01--], the period
 ends at 24:00:00 on 31 January each year.
 
 NOTE: Particular care should be taken if the start or end date is
-28 or 29 February. S-100 Ed. 4.0.0 § 3-8 explains the implications
+28 or 29 February. <<IHO_S_100,clause=3-8>> explains the implications
 for end of February. For example, the truncated date
 pass-format:metanorma[----02--] will be interpreted as 29 February
 in leap years and 28 February in non-leap years, while
@@ -1140,17 +1142,17 @@ details of data creation and updating;
 of the dataset.
 
 S-127 uses the same components of discovery metadata as S-100.
-The mandatory components for discovery metadata are defined in S-100
-Edition 4.0.0 Appendix 4A-D and consist of:
+The mandatory components for discovery metadata are defined in
+<<IHO_S_100,locality:appendix=4A-D>> and consist of:
 
 . Exchange catalogue -- a single exchange catalogue for an exchange
 set. (Subsets of exchange sets are not envisaged.) The elements are
-defined in S-100 App. 4A § D-2.2 (S100_ExchangeCatalogue).
+defined in <<IHO_S_100,clause=D-2.2>> (S100_ExchangeCatalogue).
 . Dataset discovery metadata for each dataset in the exchange set.
-Elements are defined in S-100 App. 4A § D-2.6 (S100_DatasetDiscoveryMetaData).
+Elements are defined in <<IHO_S_100,clause=D-2.6>> (S100_DatasetDiscoveryMetaData).
 Additional elements have been defined in the main specification.
 . Support file discovery metadata for each support file in the exchange
-set. Elements are defined in S-100 App. 4A § D-2.11 (S100_SupportFileDiscoveryMetaData).
+set. Elements are defined in <<IHO_S_100,clause=D-2.11>> (S100_SupportFileDiscoveryMetaData).
 
 Discovery metadata is generally encoded separately from the dataset
 itself so as to allow applications to read it without processing the
@@ -1210,9 +1212,9 @@ FOID may eventually be replaced by Maritime Resource Name (MRN).
 In this version MRN is not included due to ongoing development on
 IHO guidelines for the use of MRN.
 
-==== 180° Meridian of Longitude
+==== stem:[180 "unitsml(deg)"] Meridian of Longitude
 
-Datasets must not cross the 180° meridian of longitude.
+Datasets must not cross the stem:[180 "unitsml(deg)"] meridian of longitude.
 
 === Geographic names
 

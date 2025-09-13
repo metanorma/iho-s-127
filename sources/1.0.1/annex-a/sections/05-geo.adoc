@@ -226,7 +226,7 @@ associated to the *Caution Area*.
 feature should cover only that area.
 * If the information to be encoded is spatially linear, this should
 be encoded using a "very narrow" *Caution Area* feature of type area
-(approximately 0·2mm wide at the maximum display scale of the ENC
+(approximately 0&#xB7;2mm wide at the maximum display scale of the ENC
 data) similar to the method for encoding linear maritime jurisdiction
 areas (see <<IHO_S_101,clause=2.5.10>>).
 * Information which may be of use to the mariner, but is not significant

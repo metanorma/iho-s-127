@@ -13,7 +13,8 @@ System 1984 (WGS 84) which is defined by the European Petroleum Survey
 Group (EPSG) code 4326, (or similar - North American Datum 1983 /
 Canadian Spatial Reference System).
 
-Spatial data are expressed as latitude (φ) and longitude (λ) geographic
+Spatial data are expressed as latitude (stem:[varphi]) and longitude
+(stem:[lambda]) geographic
 coordinates. Latitude values are stored as a negative number to represent
 a position south of the Equator. Longitude values are stored as a
 negative number to represent a position west of the Prime Meridian.
