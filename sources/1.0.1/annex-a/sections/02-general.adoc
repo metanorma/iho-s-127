@@ -22,7 +22,7 @@ it is used (and where there might be confusion, it is written out
 in full as feature class/type/instance).
 
 The model defines real world entities as a combination of descriptive
-and spatial characteristics (S-127 Product Specification clause 6).
+and spatial characteristics (<<S127,clause=6>>).
 
 This clause of the DCEG contains general information needed to understand
 the encoding rules and describes fundamental common rules and constraints.
@@ -302,7 +302,7 @@ types have at least one sub-attribute which is mandatory (or conditionally
 mandatory). Mandatory sub-attributes of complex attributes have not
 been included in <<table_2-3>>. Where the sub-attribute of a complex
 attribute is conditional, this is indicated in the Remarks sub-clause
-for the relevant feature class entries in Clause 5.
+for the relevant feature class entries in <<sec_5>>.
 
 [[sec_2.4.4]]
 ==== Missing attribute values
@@ -657,7 +657,7 @@ Dates may be complete or truncated values. The definition of the attribute
 will indicate if it must take a complete value (type _Date_ or _DA_)
 or is allowed to take a truncated value (type _S100_TruncatedDate_
 or _TD_). Complete and truncated dates are different value types (see
-S-100 § 1-2 Table 1-2; also <<table_2-9>> of this DCEG).
+<<IHO_S_100,table=1-2>>; also <<table_2-9>> of this DCEG).
 
 For attributes that use the complete date type (type _Date_ or _DA_),
 all their components (year, month, and day) must be specified.
@@ -1054,7 +1054,7 @@ is encoded using the *InclusionType* association class.
 Certain features and information types may be permitted or required
 to have associations to other feature or information types. The allowed
 or mandatory associations for a feature/information type are shown
-in the application schema (clause 6 -- Product Specification) and
+in the application schema (<<S127,clause=6>>) and
 listed in the documentation for individual types (Appendix A - DCEG).
 Definitions of the associations and roles are also given in the DCEG.
 
@@ -1167,7 +1167,7 @@ www.iho.int)
 
 Dataset header metadata contains structural and discovery metadata
 that apply to the whole dataset and are encoded in the dataset file.
-The elements are described in S-100 clause 10b-9.6.
+The elements are described in <<IHO_S_100,clause=10b-9.6>>.
 
 ==== Dataset units
 

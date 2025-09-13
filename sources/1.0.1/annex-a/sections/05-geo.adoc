@@ -228,7 +228,7 @@ feature should cover only that area.
 be encoded using a "very narrow" *Caution Area* feature of type area
 (approximately 0·2mm wide at the maximum display scale of the ENC
 data) similar to the method for encoding linear maritime jurisdiction
-areas (see S-101 DCEG clause 2.5.10).
+areas (see <<IHO_S_101,clause=2.5.10>>).
 * Information which may be of use to the mariner, but is not significant
 to safe navigation and cannot be encoded using other feature types,
 should be encoded using a differentfeature type and an associated

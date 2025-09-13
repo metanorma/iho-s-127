@@ -119,7 +119,7 @@ other dynamic content, for example DHTML, Flash etc.
 | XML
 | XML documents must only be included in accordance with guidance
 provided within the Data Classification and Encoding Guide
-(Annex A) and must not contain embedded Javascript or other dynamic
+(<<S127AnnexA>>) and must not contain embedded Javascript or other dynamic
 content.
 | Picture | TIF | Baseline TIFF 6.0.
 |===

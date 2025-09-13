@@ -15,14 +15,15 @@ schema, which realize the GFM meta-classes *S100_GF_FeatureType* and
 
 Marine Traffic Management (MTM) features are encoded as vector entities
 which conform to S-100 geometry configuration level 3b
-(S-100 clause 7-5.3.5). S-127 further constrains Level 3a with the
+(<<IHO_S_100,clause=7-5.3.5>>). S-127 further constrains Level 3a with the
 following:
 
 * Coincident linear geometry must be avoided when there is a dependency
 between features.
 * The interpolation of arc by centre point and circle by centre point
 curve segments must be circular arcs with centre and radius, as described
-in S-100 §§ 7-4.2.1, 7-4.2.20, and 7-4.2.21.
+in <<IHO_S_100,clause=7-4.2.1>>, <<IHO_S_100,clause=7-4.2.20>>,
+and <<IHO_S_100,clause=7-4.2.21>>.
 * The interpolation of other GM_CurveSegment must be loxodromic.
 * Linear geometry is defined by curves which are made of curve segments.
 Each curve segment contains the geographic coordinates as control
@@ -56,7 +57,7 @@ specifically. Meta-features that provide quality and coverage information
 are contained within their own package. The last package is Cartographic
 Features, which allow dataset creators to provide cartographically
 necessary placements where required. Geographic features in all packages
-use the spatial types from S-100 Part 7, which are imported as-is
+use the spatial types from <<IHO_S_100,part=7>>, which are imported as-is
 into the S-127 spatial types package and therefore can be used as
 types for S-127 spatial attributes. The Geometry package also contains
 definitions of 'union types' (combinations of the S-100 spatial types).
@@ -84,7 +85,7 @@ application schema:
 
 * Standard UML conventions for classes, associations, inheritance,
 roles, and multiplicities apply. These conventions are described in
-Part 1 of S-100.
+<<IHO_S_100,part=1>>.
 * _Italic_ font for a class name indicates an abstract class.
 * Feature classes are depicted with green background; the dark shade
 for abstract feature classes and the light shade for ordinary (non-abstract)

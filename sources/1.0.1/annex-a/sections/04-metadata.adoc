@@ -7,7 +7,7 @@
 
 The maximum use must be made of meta features to reduce the attribution
 on individual features. Some meta features are mandatory in a dataset;
-see S-127 Product Specification main document clauses 10.9 and 10.11.
+see <<S127,clause=10.9>> and <<S127,clause=10.11>>.
 
 [[sec_4.2]]
 === Mandatory meta features
@@ -65,11 +65,10 @@ display scale will normally be (null) and maximum display scale 1000
 see <<table_2-11>>). Should a producer need to encode different maximum
 and minimum display scales from the extreme (i.e., create scale-dependent
 datasets), the values of maximum and minimum display scales should
-be harmonized with base layer S-101 datasets (see the S-101 DCEG clause
-3.4.1).
+be harmonized with base layer S-101 datasets (see the <<IHO_S_101,clause=3.4.1>>).
 
 Given that S-127 data will overlay ENC and possibly other datasets,
-the conditions described in S-101 clause 3.4.1 for displaying overscale
+the conditions described in <<IHO_S_101,clause=3.4.1>> for displaying overscale
 warnings and setting the viewing scale may be overridden by interoperability
 constraints or the presence of higher-priority datasets. The specification
 of such behaviour is out of scope for this document (the S-100 interoperability

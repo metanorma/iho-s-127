@@ -44,8 +44,8 @@ are not shown in the figure but can be seen in the feature table that
 describes the *FeatureType* abstract feature.
 
 The usual UML conventions apply. For explanations of standard UML
-notations, see S-100 Part 1. For explanations of the colour conventions,
-see clause 6.2 in the S-127 (Main) Product Specification.
+notations, see <<IHO_S_100,part=1>>. For explanations of the colour conventions,
+see <<S127,clause=6.2>>.
 
 [%unnumbered]
 image::figure-9.png[]
@@ -71,7 +71,7 @@ of the four information types *Regulations*, *Restrictions*, *Recommendations*,
 and *NauticalInformation* (see <<sec_7.2>>), the *AssociatedRxN* relationship
 of *CautionArea* (or any other sub-class of *FeatureType*) applies
 to those four classes.The usual UML conventions apply. For explanations
-of standard UML notations, see S-100 Part 1. For explanations of the
+of standard UML notations, see <<IHO_S_100,part=1>>. For explanations of the
 conventions used for associations, see <<sec_2.5>> in this DCEG.
 
 [%unnumbered]
@@ -134,8 +134,8 @@ document.
 
 Type: The prefix ++(C)++ indicates that the attribute is a complex
 attribute. Complex attributes are aggregates of other attributes that
-can be simple type or complex type (see Product Specification main
-document clause 7.3). The prefix (S) indicates that the attribute
+can be simple type or complex type (see <<S127,clause=7.3>>).
+The prefix (S) indicates that the attribute
 is a sub-attribute of a complex attribute. Complex attributes that
 are sub-attributes of a complex attribute, and their sub-attributes,
 are indicated by indentation of the attribute name in the S-127 Attribute
