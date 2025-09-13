@@ -77,10 +77,10 @@ image::figure-36.png[]
 <<fig_37>> shows an example of a *PilotageDistrict* feature instance.
 This feature is associated to a *PilotBoardingPlace* feature instance
 (the tag _<consistsOf_ with the target feature instance indicated
-by the _xlink:href="…"_ attributes). The _consistsOf_ tag also contains
+by the _xlink:href="..."_ attributes). The _consistsOf_ tag also contains
 an _xlink:role_ XML attribute whose value indicate the role. It is
 also associated with two pilot services (the _<serviceProvider_ tags,
-with the target feature instances indicated by the _xlink:href="…"_
+with the target feature instances indicated by the _xlink:href="..."_
 attribute in each).
 
 [[fig_37]]
