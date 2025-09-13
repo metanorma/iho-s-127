@@ -18,6 +18,8 @@
 
 * [[[ISO_19117,hidden(ISO 19117)]]]
 
+* [[[IHO_S_100,hidden(IHO S-100)]]]
+
 * [[[S127,dropid(repo:(current-metanorma-collection/IHO S-127))]]],
 span:title[S-127 -- Marine Traffic Management Product Specification],
 span:edition[1.0.1],

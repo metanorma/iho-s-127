@@ -58,7 +58,7 @@
 
 * [[[ISO_19157,hidden(ISO 19157)]]]
 
-* [[[ISO_10646_1,hidden(ISO 10646-1)]]]
+* [[[ISO_10646_1,hidden(ISO/IEC 10646-1)]]]
 
 * [[[ISO_19115_3,hidden(ISO 19115-3)]]]
 
