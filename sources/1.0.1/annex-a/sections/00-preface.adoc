@@ -1,19 +1,32 @@
-
 [.preface]
-== Document Control
+== metanorma-extension
 
-[cols="6",options="unnumbered,noheader"]
-|===
-h| Version h| Version Type h| Date h| Approved By h| Signed Off By h| Role
+=== document history
 
-| 0.1        | Draft                                  | 2018-05-31 | | |
-| 0.2        | Adjudicate comments from first review  | 2018-08-24 | | |
-| 1.0.0 RC1  | Adjudicate comments from second review | 2018-11-29 | | |
-| 1.0.1
-| Clarifications based on feedback on Dec. 2018 version; removal of unused elements;
-updated figures which included updated application schema elements
-| 2019-11-15 |                                        |            |
-|            |                                        |            | | |
-|            |                                        |            | | |
-|===
-
+[source,yaml]
+----
+- date:
+  - type: updated
+    value: 2018-05-31
+  edition: "0.1"
+  amend:
+    - description: Draft
+- date:
+  - type: updated
+    value: 2018-08-24
+  edition: "0.2"
+  amend:
+    - description: Adjudicate comments from first review
+- date:
+  - type: updated
+    value: 2018-11-29
+  edition: "1.0.0 RC1"
+  amend:
+    - description: Adjudicate comments from second review
+- date:
+  - type: updated
+    value: 2019-11-15
+  edition: "1.0.1"
+  amend:
+    - description: Clarifications based on feedback on Dec. 2018 version; removal of unused elements; updated figures which included updated application schema elements
+----
