@@ -172,7 +172,7 @@ about a related area or facility.
 image::figure-75.png[]
 
 8+h| [underline]#Information associations#
-h| Role Type 2+h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Multiplicity
+h| Role Type h| Association Name h| Class h| Role h| Mult. h| Class h| Role h| Multiplicity
 
 8+|
 [%unnumbered]
