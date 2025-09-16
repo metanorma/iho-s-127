@@ -6,7 +6,7 @@
 :language: en
 :published-date: 2019-11-01
 :copyright-year: 2019
-:draft:
+:status: in-force
 :committee: ircc
 :workgroup: ibsc
 :mn-document-class: iho
