@@ -1,12 +1,13 @@
 = Data Classification and Encoding Guide - Annex A
 :series: S
 :docnumber: 127
+:annex-id: A
 :doctype: standard
 :edition: 1.0.1
 :language: en
 :published-date: 2019-11-01
 :copyright-year: 2019
-:draft:
+:status: in-force
 :committee: ircc
 :workgroup: ibsc
 :mn-document-class: iho
